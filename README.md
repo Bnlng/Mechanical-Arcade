@@ -1,7 +1,7 @@
 # Mechanical-Arcade
 Mechanical Arduino Arcade
 
-```Java
+```C
 const int analogInPin = A0;  
 const int analogOutPin9 = 9; 
 const int analogOutPin11 = 11;
