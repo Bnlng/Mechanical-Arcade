@@ -26,6 +26,7 @@ const int inputTolleranceY = 1;
 const int inputOffsetX = 0; //Has to be adjusted if sensorValueX ≠ 511 or 512
 const int inputOffsetY = 0; //Has to be adjusted if sensorValueY ≠ 511 or 512
 const int antiGravity = 5/10; //Prevents plane from going down too fast
+const int borderSpeed = 250;
 
 int sensorValueX = 0;  
 int sensorValueY = 0;
@@ -51,23 +52,23 @@ void loop() {
     buttonBorderDownState = digitalRead(buttonBorderDownPin);
 
     if(buttonBorderLeftState == HIGHT) {
-        analogWrite(pwmPinXpos, 250);
+        analogWrite(pwmPinXpos, borderSpeed);
         delay(500);
         analogWrite(pwmPinXpos, 0);
     }
     if(buttonBorderRightState == HIGHT) {
-        analogWrite(pwmPinXneg, 250);
+        analogWrite(pwmPinXneg, borderSpeed);
         delay(500);
         analogWrite(pwmPinXneg, 0);
     }
 
     if(buttonBorderUpState == HIGHT) {
-        analogWrite(pwmPinYpos, 250);
+        analogWrite(pwmPinYpos, borderSpeed);
         delay(500);
         analogWrite(pwmPinYpos, 0);
     }
     if(buttonBorderDownState == HIGHT) {
-        analogWrite(pwmPinYneg, 250);
+        analogWrite(pwmPinYneg, borderSpeed);
         delay(500);
         analogWrite(pwmPinYneg, 0);
     }
