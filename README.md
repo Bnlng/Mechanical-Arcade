@@ -132,13 +132,6 @@ void loop() {
     delay(1);
 }
 ```
-
-
-
-
-
-
-
 ```c
 
 const int analogInPinX = A1;
@@ -208,45 +201,6 @@ else if (sensorValueY >495 ||sensorValueY<500){
   delay(1);
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```C
 const int analogInPin = A0;  
 const int analogOutPin9 = 9; 
@@ -285,7 +239,6 @@ void loop() {
   delayMicroseconds(5);
 }
 ```
-
 ```C
 const int analogInPin = A0;  
 const int analogOutPin9 = 9; 
@@ -326,9 +279,8 @@ else if (sensorValue = 513){
 
   delay(1);
 }
-´´´c
-
-
+```
+```c
 const int analogInPin = A0;  
 const int analogOutPin9 = 9; 
 const int analogOutPin11 = 11;
@@ -370,3 +322,4 @@ else if (sensorValue <= ((sensorValueMax/2)+sensorValueTollerance) || sensorValu
 
   delay(1);
 }
+```
