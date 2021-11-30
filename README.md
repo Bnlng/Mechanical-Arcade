@@ -3,11 +3,135 @@ Mechanical Arduino Arcade
 
 
 
-![image](https://user-images.githubusercontent.com/88386307/144127486-bab000a9-f539-4d2f-a9ed-a1003cd3ef4a.png)
+![image](https://user-images.githubusercontent.com/88386307/144134092-46e0fe8e-6a1f-4bf1-b96e-1f3ff82eb055.png)
 
 
+überabeiteter Code:
+```c
+const int analogInPinX = A0; //Joystick Inputpin X-axis
+const int analogInPinY = A1; //Joystick Inputpin Y-axis
+
+const int pwmPinXpos = 3;
+const int pwmPinXneg = 5;
+const int pwmPinYpos = 6;
+const int pwmPinYneg = 9;
+
+const int buttonBorderLeftPin = 2;
+const int buttonBorderRightPin = 4;
+const int buttonBorderUpPin = 7;
+const int buttonBorderDownPin = 8;
+
+const int inputTolleranceX = 1;
+const int inputTolleranceY = 1;
+const int inputOffsetX = 0; //Has to be adjusted if sensorValueX ≠ 511 or 512
+const int inputOffsetY = 0; //Has to be adjusted if sensorValueY ≠ 511 or 512
+const int antiGravity = 5/10; //Prevents plane from going down too fast
+
+int sensorValueX = 0;  
+int sensorValueY = 0;
+
+int outputValueX = 0;       
+int outputValueY = 0;       
+
+void setup() {
+    Serial.begin(9600);
+
+    pinMode(buttonBorderLeftPin, INPUT);
+    pinMode(buttonBorderRightPin, INPUT);
+    pinMode(buttonBorderUpPin, INPUT);
+    pinMode(buttonBorderDownPin, INPUT);
+}
+
+void loop() {
+
+    /*Border detection
+    buttonBorderLeftState = digitalRead(buttonBorderLeftPin);
+    buttonBorderRightState = digitalRead(buttonBorderRightPin);
+    buttonBorderUpState = digitalRead(buttonBorderUpPin);
+    buttonBorderDownState = digitalRead(buttonBorderDownPin);
+
+    if(buttonBorderLeftState == HIGHT) {
+        analogWrite(pwmPinXpos, 250);
+        delay(500);
+        analogWrite(pwmPinXpos, 0);
+    }
+    if(buttonBorderRightState == HIGHT) {
+        analogWrite(pwmPinXneg, 250);
+        delay(500);
+        analogWrite(pwmPinXneg, 0);
+    }
+
+    if(buttonBorderUpState == HIGHT) {
+        analogWrite(pwmPinYpos, 250);
+        delay(500);
+        analogWrite(pwmPinYpos, 0);
+    }
+    if(buttonBorderDownState == HIGHT) {
+        analogWrite(pwmPinYneg, 250);
+        delay(500);
+        analogWrite(pwmPinYneg, 0);
+    }
+    */
 
 
+    //X-movement
+    sensorValueX = analogRead(analogInPinX);
+
+    if (sensorValueX >= (512 + inputTolleranceX + inputOffsetX)) {
+        outputValueX = map(sensorValueX,  512 + inputOffsetX, 1023, 0, 255);
+        analogWrite(pwmPinXneg, 0);
+        analogWrite(pwmPinXpos, outputValueX);
+    }
+
+    else if (sensorValueX <= (511 - inputTolleranceX + inputOffsetX)) {
+        outputValueX = map(sensorValueX, 511 + inputOffsetX, 0, 0, 255);
+        analogWrite(pwmPinXpos, 0);
+        analogWrite(pwmPinXneg, outputValueX);
+    }
+
+    else{
+        outputValueX = 0;
+        analogWrite(pwmPinXpos, outputValueX);
+        analogWrite(pwmPinXneg, outputValueX);
+    }
+
+    //Y-movement
+    sensorValueY = analogRead(analogInPinX);
+
+    if (sensorValueY >= (512 + inputTolleranceY + inputOffsetY)) {
+        outputValueY = map(sensorValueY, 512 + inputOffsetY, 1023, 0, 255);
+        analogWrite(pwmPinYneg, 0);
+        analogWrite(pwmPinYpos, outputValueY);
+    }
+
+    else if (sensorValueY <= (511 - inputTolleranceY + inputOffsetY)) {
+        outputValueY = map(sensorValueY, 511 + inputOffsetY, 0, 0, 255);
+        analogWrite(pwmPinYpos, 0);        
+        analogWrite(pwmPinYneg, outputValueY);
+    }
+
+    else{
+        outputValueY = 0;
+        analogWrite(pwmPinYpos, outputValueY);
+        analogWrite(pwmPinYneg, outputValueY);
+    }
+
+
+    
+    Serial.print("sensorX = ");
+    Serial.print(sensorValueX);
+    Serial.print("\t outputX = ");
+    Serial.println(outputValueX);
+
+    Serial.print("sensorY = ");
+    Serial.print(sensorValueY);
+    Serial.print("\t outputY = ");
+    Serial.println(outputValueY);
+
+
+    delay(1);
+}
+```
 
 
 
