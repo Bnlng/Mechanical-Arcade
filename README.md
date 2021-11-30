@@ -2,6 +2,7 @@
 Mechanical Arduino Arcade
 
 ```c
+
 const int analogInPinX = A1;
 const int analogInPinY = A0; 
  
@@ -10,6 +11,7 @@ const int analogOutPin11 = 11;
 
 const int OutPinX10 = 10;
 const int OutPinX6 = 6;
+//int yCorrection = 1/10; 
 
 int sensorValueY = 0;
 int sensorValueX = 0;  
@@ -33,25 +35,25 @@ else if (sensorValueX < 512) {
   outputValueX = map(sensorValueX, 513, 0, 0, 255);
   analogWrite(OutPinX6, outputValueX);
  }
-else if (sensorValueX = 513){
+else  if (sensorValueX = 513){
   outputValueX = 0;
   analogWrite(OutPinX10, outputValueX);
   analogWrite(OutPinX6, outputValueX);
 }
 
-// YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-  sensorValue = analogRead(analogInPinY);
+// YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY  if (sensorValueX = 513)
+  sensorValueY = analogRead(analogInPinY);
 
- if (sensorValueY > 515) {
+ if (sensorValueY > 500) {
   outputValueY = map(sensorValueY, 515, 1023, 0, 255);
   analogWrite(analogOutPin9, outputValueY);
  }
 
-else if (sensorValueY < 512) {
+else if (sensorValueY < 495) {
   outputValueY = map(sensorValueY, 513, 0, 0, 255);
   analogWrite(analogOutPin11, outputValueY);
  }
-else if (sensorValueY = 513){
+else if (sensorValueY >495 ||sensorValueY<500){
   outputValueY = 0;
   analogWrite(analogOutPin11, outputValueY);
   analogWrite(analogOutPin9, outputValueY);
@@ -60,9 +62,9 @@ else if (sensorValueY = 513){
  
  
   Serial.print("sensor = ");
-  Serial.print(sensorValue);
+  Serial.print(sensorValueY);
   Serial.print("\t output = ");
-  Serial.println(outputValue);
+  Serial.println(outputValueY);
 
 
   delay(1);
