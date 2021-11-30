@@ -1,6 +1,20 @@
 # Mechanical-Dogfight
 Mechanical Arduino Arcade
 
+
+
+![image](https://user-images.githubusercontent.com/88386307/144127486-bab000a9-f539-4d2f-a9ed-a1003cd3ef4a.png)
+
+
+
+
+
+
+
+
+
+
+
 ```c
 
 const int analogInPinX = A1;
