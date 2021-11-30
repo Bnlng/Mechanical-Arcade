@@ -1,6 +1,112 @@
 # Mechanical-Dogfight
 Mechanical Arduino Arcade
 
+```c
+const int analogInPinX = A1;
+const int analogInPinY = A0; 
+ 
+const int analogOutPin9 = 9; 
+const int analogOutPin11 = 11;
+
+const int OutPinX10 = 10;
+const int OutPinX6 = 6;
+
+int sensorValueY = 0;
+int sensorValueX = 0;  
+      
+int outputValueY = 0;   
+int outputValueX = 0;     
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+    sensorValueX = analogRead(analogInPinX);
+
+ if (sensorValueX > 515) {
+  outputValueX = map(sensorValueX, 515, 1023, 0, 255);
+  analogWrite(OutPinX10, outputValueX);
+ }
+
+else if (sensorValueX < 512) {
+  outputValueX = map(sensorValueX, 513, 0, 0, 255);
+  analogWrite(OutPinX6, outputValueX);
+ }
+else if (sensorValueX = 513){
+  outputValueX = 0;
+  analogWrite(OutPinX10, outputValueX);
+  analogWrite(OutPinX6, outputValueX);
+}
+
+// YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+  sensorValue = analogRead(analogInPinY);
+
+ if (sensorValueY > 515) {
+  outputValueY = map(sensorValueY, 515, 1023, 0, 255);
+  analogWrite(analogOutPin9, outputValueY);
+ }
+
+else if (sensorValueY < 512) {
+  outputValueY = map(sensorValueY, 513, 0, 0, 255);
+  analogWrite(analogOutPin11, outputValueY);
+ }
+else if (sensorValueY = 513){
+  outputValueY = 0;
+  analogWrite(analogOutPin11, outputValueY);
+  analogWrite(analogOutPin9, outputValueY);
+}
+
+ 
+ 
+  Serial.print("sensor = ");
+  Serial.print(sensorValue);
+  Serial.print("\t output = ");
+  Serial.println(outputValue);
+
+
+  delay(1);
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```C
 const int analogInPin = A0;  
 const int analogOutPin9 = 9; 
