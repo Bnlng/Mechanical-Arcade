@@ -122,9 +122,9 @@ void loop() {
     Serial.print("sensorX = ");
     Serial.print(sensorValueX);
     Serial.print("\t outputX = ");
-    Serial.println(outputValueX);
+    Serial.print(outputValueX);
 
-    Serial.print("sensorY = ");
+    Serial.print("\tsensorY = ");
     Serial.print(sensorValueY);
     Serial.print("\t outputY = ");
     Serial.println(outputValueY);
