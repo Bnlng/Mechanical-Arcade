@@ -77,7 +77,6 @@ void loop() {
         analogWrite(posYpwmPin, outputValueY);
         analogWrite(negYpwmPin, 0);
     }
-    delay(1);
     
     Serial.print("sensorX = ");
     Serial.print(sensorValueX);
@@ -88,4 +87,6 @@ void loop() {
     Serial.print(sensorValueY);
     Serial.print("\t outputY = ");
     Serial.println(outputValueY);
+    
+    delay(1);
 }
