@@ -24,7 +24,10 @@ Damit das Flugzeug alle Punkte erreichen kann haben wir ein positionierungssyste
 
 ![image](https://user-images.githubusercontent.com/88386307/144761706-21d4a451-e115-492c-89b5-d6fb040c856c.png)
 
-Das 3D Modell dieser Grafik kann unter <code>3D Modell.3mf</code>, in den Dateien des Repositorys eingesehen werden.
+Das 3D Modell dieser Grafik kann unter <code>3D Modell.3mf</code> in den Dateien des Repositorys eingesehen werden.
 
 ## Schaltplan
 ![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
+
+Anmerkungen:  Der Joystick sieht in echt etwas anders aus, da es im verwendeten Programm (TinkerCAD) keinen Gab.
+              Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
