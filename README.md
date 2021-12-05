@@ -24,7 +24,7 @@ Damit das Flugzeug alle Punkte erreichen kann haben wir ein positionierungssyste
 
 ![image](https://user-images.githubusercontent.com/88386307/144764417-1840f16e-6fd4-458f-b5d3-6f260564718b.png)
 
-Das 3D Modell dieser Grafik kann unter <code>3D Modell.3mf</code> in den Dateien des Repositorys eingesehen werden.
+Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des Repositorys eingesehen werden.
 
 ## Schaltplan
 ![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
