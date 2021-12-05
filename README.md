@@ -35,7 +35,7 @@ Der Joystick sieht in echt etwas anders aus, da es im verwendeten Programm (Tink
 
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
-#Code
+## Code
 <code>Arduino Code ohne Erklärungen.ino</code> enthält den Code, der auf dem Arduino läuft.
 
 <code>Arduino Code mit Erklärungen.ino</code> enthält den gleichen Code, aber mit zusätzlichen Erläuterungen.
