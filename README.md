@@ -34,3 +34,8 @@ Anmerkungen:
 Der Joystick sieht in echt etwas anders aus, da es im verwendeten Programm (TinkerCAD) keinen Gab.
 
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
+
+#Code
+<code>Arduino Code ohne Erklärungen.ino</code> enthält den Code, der auf dem Arduino läuft.
+
+<code>Arduino Code mit Erklärungen.ino</code> enthält den gleichen Code, aber mit zusätzlichen Erläuterungen.
