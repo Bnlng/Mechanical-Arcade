@@ -7,6 +7,16 @@ Damit das Flugzeug alle Punkte erreichen kann haben wir ein positionierungssyste
 ![image](https://user-images.githubusercontent.com/88386307/144761706-21d4a451-e115-492c-89b5-d6fb040c856c.png)
 
 Das 3D Modell dieser Grafik kann unter <code>3D Modell.3mf</code>, in den Dateien des Repositorys eingesehen werden.
-## Hardware
+## Materialliste
+* 1 Arduino
+* 1 5V Netzteil
+* 1 Steckbrett
+*   Steckbrettkabel
+* 1 DC-Motor-Controller
+* 2 DC-Motoren
+* 2 Zahnstangen
+* 2 Schienen
+* 1 Modellflugzeug
+
 ## Schaltplan
 ![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
