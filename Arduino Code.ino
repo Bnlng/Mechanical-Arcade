@@ -1,11 +1,11 @@
 //Arduino Pins
-const int joystickXInputPin = A1; //Joystick Inputpin X-axis
-const int joystickYInputPin = A0; //Joystick Inputpin Y-axis
+const int joystickXInputPin = A1;
+const int joystickYInputPin = A0;
 
-const int posXpwmPin = 10; //Pin that moves the plane to the right
-const int negXpwmPin = 6; //Pin that moves the plane to the left
-const int posYpwmPin = 9; //Pin that moves the plane up
-const int negYpwmPin = 11; //Pin that moves the plane down
+const int posXpwmPin = 10;
+const int negXpwmPin = 6;
+const int posYpwmPin = 9;
+const int negYpwmPin = 11;
 
 const int buttonBorderLeftPin = 2;
 const int buttonBorderRightPin = 4;
@@ -13,15 +13,15 @@ const int buttonBorderTopPin = 7;
 const int buttonBorderBottomPin = 8;
 
 //Joystick callibration
-int joystickXMaxValue = 955; //Maximum value that joystickXInputPin reads
-int joystickXMinValue = 210; //Minimum value that joystickXInputPin reads
-int joystickXCenterValue = 516; //Value that int joystickXInputPin reads at default joystick position
-int joystickXCenterTollerance = 6; //Tollerance for joystickXCenterValue
+int joystickXMaxValue = 955;
+int joystickXMinValue = 210;
+int joystickXCenterValue = 516;
+int joystickXCenterTollerance = 6;
 
-int joystickYMaxValue = 890; //Maximum value that joystickYInputPin reads
-int joystickYMinValue = 155; //Minimum value that joystickYInputPin reads
-int joystickYCenterValue = 522; //Value that int joystickYInputPin reads at default joystick position
-int joystickYCenterTollerance = 12; //Tollerance for joystickYCenterValue
+int joystickYMaxValue = 890;
+int joystickYMinValue = 155;
+int joystickYCenterValue = 522;
+int joystickYCenterTollerance = 12;
 
 
 int sensorValueX = 0;
