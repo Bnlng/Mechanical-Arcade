@@ -1,4 +1,4 @@
-'''c
+```c
 //Arduino Pins
 const int joystickXInputPin = A1; //Joystick Inputpin X-axis
 const int joystickYInputPin = A0; //Joystick Inputpin Y-axis
