@@ -43,12 +43,12 @@ void loop() {
     //X-movement
     sensorValueX = analogRead(joystickXInputPin);
 
-    if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) || digitalRead(buttonBorderLeftPin) == LOW) {
+    if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && digitalRead(buttonBorderLeftPin) == LOW) {
         outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255); 
         analogWrite(negXpwmPin, 0);
         analogWrite(posXpwmPin, outputValueX);
     }
-    else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) || digitalRead(buttonBorderRightPin) == LOW) {
+    else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && digitalRead(buttonBorderRightPin) == LOW) {
         outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255);
         analogWrite(posXpwmPin, 0);
         analogWrite(negXpwmPin, outputValueX);
@@ -62,12 +62,12 @@ void loop() {
     //Y-movement
     sensorValueY = analogRead(joystickYInputPin);
 
-    if (sensorValueY > (joystickYCenterValue + joystickYCenterTollerance) || digitalRead(buttonBorderTopPin) == LOW) {
+    if (sensorValueY > (joystickYCenterValue + joystickYCenterTollerance) && digitalRead(buttonBorderTopPin) == LOW) {
         outputValueY = map(sensorValueY, joystickYCenterValue + joystickYCenterTollerance, joystickYMaxValue, 0, 255);
         analogWrite(negYpwmPin, 0);
         analogWrite(posYpwmPin, outputValueY);
     }
-    else if (sensorValueY < (joystickYCenterValue - joystickYCenterTollerance) || digitalRead(buttonBorderBottomPin) == LOW) {
+    else if (sensorValueY < (joystickYCenterValue - joystickYCenterTollerance) && digitalRead(buttonBorderBottomPin) == LOW) {
         outputValueY = map(sensorValueY, joystickYCenterValue - joystickYCenterTollerance, joystickYMinValue, 0, 255);
         analogWrite(posYpwmPin, 0);
         analogWrite(negYpwmPin, outputValueY);
@@ -75,7 +75,7 @@ void loop() {
     else{
         outputValueY = 0;
         analogWrite(posYpwmPin, outputValueY);
-        analogWrite(negYpwmPin, 0);
+        analogWrite(negYpwmPin, outputValueY);
     }
     
     Serial.print("sensorX = ");
