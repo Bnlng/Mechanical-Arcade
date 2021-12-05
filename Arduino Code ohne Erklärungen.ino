@@ -31,7 +31,7 @@ int outputValueX = 0;
 int outputValueY = 0;
 
 void setup() {
-    Serial.begin(9600); //
+    Serial.begin(9600);
 
     pinMode(buttonBorderLeftPin, INPUT);
     pinMode(buttonBorderRightPin, INPUT);
