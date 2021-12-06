@@ -26,7 +26,7 @@ Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegun
 
 Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des Repositorys eingesehen werden.
 
-Außerdem findet sich hier ein Vorführungsvideo aus der Ansicht von hinten, also vom späteren Inneren des Spielekastens. Hier findet sich ein Vorführungsvideo aus der Spieleransicht.
+Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vorführungsvideo aus der Ansicht von hinten, also vom späteren Inneren des Spielekastens. [Hier](https://www.youtube.com/watch?v=7guUQbI5MUM) findet sich ein Vorführungsvideo aus der Spieleransicht.
 
 ## Schaltplan
 ![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
