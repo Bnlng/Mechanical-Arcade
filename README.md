@@ -1,5 +1,5 @@
 # Mechanical Dogfight
-Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugkampf geht (engl. Dogfight). Der Spieler Steuert ein Flugzeug, dass ein anderes automatisch gesteuertes Flugzeug verfolgt. Ziel ist es, das gegnerische Flugzeug mit einem Laser abzuschießen. Zu diesem Zeitpunkt ist nur das Spielerflugzeug fertig, weshalb es in diesem repository auch nur darum geht. Das zweite Flugzeug währe vielleicht etwas für ein Folgeprojekt.
+Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugkampf geht (engl. Dogfight). Der Spieler steuert ein Flugzeug, dass ein anderes automatisch gesteuertes Flugzeug verfolgt. Ziel ist es, das gegnerische Flugzeug mit einem Laser abzuschießen. Zu diesem Zeitpunkt ist nur das Spielerflugzeug fertig, weshalb es in diesem repository auch nur darum geht. Das zweite Flugzeug wäre vielleicht etwas für ein Folgeprojekt.
 
 ## Materialliste
 * 1 Arduino
@@ -31,7 +31,7 @@ Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des
 
 Anmerkungen:
 
-Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Sofware (TinkerCAD) keinen gab.
+Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Software (TinkerCAD) keinen gab.
 
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
