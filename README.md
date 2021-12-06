@@ -31,7 +31,7 @@ Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des
 
 Anmerkungen:
 
-Der Joystick sieht in echt etwas anders aus, da es im verwendeten Programm (TinkerCAD) keinen Gab.
+Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Sofware (TinkerCAD) keinen gab.
 
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
