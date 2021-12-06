@@ -38,4 +38,4 @@ Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 ## Code
 `Arduino Code ohne Erklärungen.ino` enthält den Code, der auf dem Arduino läuft.
 
-<code>Arduino Code mit Erklärungen.ino</code> enthält den gleichen Code, aber mit zusätzlichen Erläuterungen.
+`Arduino Code mit Erklärungen.ino` enthält den gleichen Code, aber mit zusätzlichen Erläuterungen.
