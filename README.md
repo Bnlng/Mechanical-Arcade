@@ -20,7 +20,7 @@ Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugk
 * 4 1kΩ Widerstände
 
 ## Aufbau
-Damit das Flugzeug alle Punkte erreichen kann haben wir ein positionierungssystem mit zwei Achsen gebaut. Wie genau dieses System aufgebaut ist zeigt folgende Grafik.
+Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegungssystem mit zwei Achsen gebaut. Wie genau dieses System aufgebaut ist zeigt folgende Grafik.
 
 ![image](https://user-images.githubusercontent.com/88386307/144764417-1840f16e-6fd4-458f-b5d3-6f260564718b.png)
 
