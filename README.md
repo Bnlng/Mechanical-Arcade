@@ -38,6 +38,10 @@ Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Software (
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
 ## Code
+<details>
+    <summary>Pins definieren</summary>
+
+```c
 //Input Pins um den Joystick auszulesen
 const int joystickXInputPin = A1; //X-Achse des Joysticks
 const int joystickYInputPin = A0; //Y-Achse des Joysticks
@@ -53,7 +57,10 @@ const int buttonLeftPin = 2; //links
 const int buttonRightPin = 4; //rechts
 const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
+```
+</details>
 
+```c
 //Joystick Kalibrierung
 int joystickXMaxValue = 955; //Maximaler X-Wert, den der joystick ausgibt
 int joystickXMinValue = 210; //Minimaler X-Wert, den der joystick ausgibt
@@ -64,7 +71,8 @@ int joystickYMaxValue = 890; //Maximaler Y-Wert, den der joystick ausgibt
 int joystickYMinValue = 155; //Minimaler Y-Wert, den der joystick ausgibt
 int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der ausgangsposition ausgibt
 int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Joyticks auf der Y-Achse
-
+```
+```c
 //Variablen um die Ausgabewerte des Joysticks im loop zwischenzuspeichern
 int sensorValueX = 0; 
 int sensorValueY = 0;
@@ -78,7 +86,8 @@ int buttonLeftState = 0;
 int buttonRightState = 0;
 int buttonTopState = 0;
 int buttonBottomState = 0;
-
+```
+```c
 void setup() {
     Serial.begin(9600); //Startet den Plotter (für die Kallibrierung des Joysticks notwendig)
 
@@ -115,7 +124,8 @@ void loop() {
         analogWrite(posXpwmPin, outputValueX);
         analogWrite(negXpwmPin, outputValueX);
     }
-
+```
+```c
     //Y-movement
     sensorValueY = analogRead(joystickYInputPin); //Liest den Ausgabewert des Joysticks für die Y-Achse aus und speichert diesen zwischen
 
@@ -136,7 +146,8 @@ void loop() {
         analogWrite(posYpwmPin, outputValueY);
         analogWrite(negYpwmPin, outputValueY);
     }
-
+```
+```c
     //Output für den Plotter (für die Kallibrierung)
     Serial.println("sensorX = ");
     Serial.print(sensorValueX);
@@ -150,3 +161,4 @@ void loop() {
 
     delay(1);
 }
+```
