@@ -13,7 +13,6 @@
         <li><a href="#schalt">3.3 Schaltung</a></li>
     </ul>
     <li><a href="#soft">2. Software</a></li>
-    <li><a href="#soft">2. Fazit</a></li>
 </ul>
 
 <h2 id="einl">Einleitung</h2>
