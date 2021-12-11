@@ -1,8 +1,28 @@
 <h1>Mechanical Dogfight</h1>
+<h3>Von Ben und Martin, 12bc</h3>
 
-Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugkampf geht (engl. Dogfight). Der Spieler steuert ein Flugzeug, dass ein anderes automatisch gesteuertes Flugzeug verfolgt. Ziel ist es, das gegnerische Flugzeug mit einem Laser abzuschießen. Zu diesem Zeitpunkt ist nur das Spielerflugzeug fertig, weshalb es in diesem repository auch nur darum geht. Das zweite Flugzeug wäre vielleicht etwas für ein Folgeprojekt.
+<h2>Inhaltsverzeichnis</h2>
 
-## Verwendete Bauteile
+<ul style="list-stlye-type:none">
+    <li><a href="#einl">1. Einleitung</a></li>
+    <li><a href="#proj">2. Das Projekt</a></li>
+    <li><a href="#hard">3. Hardware</a></li>
+    <ul>
+        <li><a href="#teil">3.1 Verwendete Bauteile</a></li>
+        <li><a href="#aufb">3.2 Aufbau</a></li>
+        <li><a href="#schalt">3.3 Schaltung</a></li>
+    </ul>
+    <li><a href="#soft">2. Software</a></li>
+</ul>
+
+<h2 id="einl">Einleitung</h2>
+    
+<h2 id="proj">Das Projekt</h2>
+    Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugkampf geht (engl. Dogfight). Der Spieler steuert ein Flugzeug, dass ein anderes automatisch       gesteuertes Flugzeug verfolgt. Ziel ist es, das gegnerische Flugzeug mit einem Laser abzuschießen. Zu diesem Zeitpunkt ist nur das Spielerflugzeug fertig, weshalb es in         diesem repository auch nur darum geht. Das zweite Flugzeug wäre vielleicht etwas für ein Folgeprojekt.
+
+<h2 id="hard">Hardware</h2>
+<h3 id="teil">Verwendete Bauteile</h3>
+
 * 1 Arduino
 * 1 5V Netzteil
 * 1 Steckbrett
@@ -20,7 +40,7 @@ Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugk
 * 4 Taster
 * 4 1kΩ Widerstände
 
-## Aufbau
+<h3 id="aufb">Aufbau</h3>
 Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegungssystem mit zwei Achsen gebaut. Wie genau dieses System aufgebaut ist zeigt folgende Grafik.
 
 ![image](https://user-images.githubusercontent.com/88386307/144764417-1840f16e-6fd4-458f-b5d3-6f260564718b.png)
@@ -29,7 +49,7 @@ Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des
 
 Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vorführungsvideo aus der Ansicht von hinten, also vom späteren Inneren des Spielekastens. [Hier](https://www.youtube.com/watch?v=7guUQbI5MUM) findet sich ein Vorführungsvideo aus der Spieleransicht.
 
-## Schaltplan
+<h2 id="schalt">Schaltplan</h2>
 ![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
 
 Anmerkungen:
@@ -38,7 +58,7 @@ Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Software (
 
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
-## Code
+<h2 id="soft">Software</h2>
 <details>
     <summary>Pins definieren</summary>
 
