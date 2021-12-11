@@ -1,4 +1,5 @@
-# Mechanical Dogfight
+<h1>Mechanical Dogfight</h1>
+
 Mechanical Dogfight ist Singleplayer Arcade-Spiel, bei dem es um einen Flugzeugkampf geht (engl. Dogfight). Der Spieler steuert ein Flugzeug, dass ein anderes automatisch gesteuertes Flugzeug verfolgt. Ziel ist es, das gegnerische Flugzeug mit einem Laser abzuschießen. Zu diesem Zeitpunkt ist nur das Spielerflugzeug fertig, weshalb es in diesem repository auch nur darum geht. Das zweite Flugzeug wäre vielleicht etwas für ein Folgeprojekt.
 
 ## Verwendete Bauteile
