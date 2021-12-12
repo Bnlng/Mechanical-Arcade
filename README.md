@@ -42,6 +42,7 @@
 * 4 1kΩ Widerstände
 
 <h3 id="aufb">Aufbau</h3>
+
 Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegungssystem mit zwei Achsen gebaut. Wie genau dieses System aufgebaut ist zeigt folgende Grafik.
 
 ![image](https://user-images.githubusercontent.com/88386307/144764417-1840f16e-6fd4-458f-b5d3-6f260564718b.png)
@@ -61,8 +62,16 @@ Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Software (
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
 <h2 id="soft">Software</h2>
-<details>
-    <summary>Pins definieren</summary>
+
+Die Programmiersprache von Arduino ist eine abwandlung von c++, genaueres über die Sprache kann [hier](https://www.arduino.cc/reference/de/) nachgelesen werden. Der gesamte Sketch wird im Folgenden genau erklärt, kann aber auch in den Dateien des Repositorys [ohne Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20ohne%20Erkl%C3%A4rungen.ino) und [mit Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20mit%20Erkl%C3%A4rungen.ino) eingesehen und runtergeladen werden.
+
+<h3>Pins definieren</h3>
+
+Als allererstes wird in Variablen gespeichert, welche Pins am Arfuino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert zwischen 0 und 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
+
+Als nächstes werden den verschiedenen Bewegungsrichtungen des Flugzeugs Pins zugewiesen, wenn diese Pins aktiviert werden gibt der Arduino ein PWM Signal ([Wikipedia](https://de.wikipedia.org/wiki/Pulsdauermodulation)) über diesen Pin aus, der Motor-Controller controller lässt daraufhin den Motor (X- oder Y-Achse) in eine bestimmte Richtung drehen. Soll sich die Drehrichtung ändern muss der Pin ausgeschaltet und ein anderer angeschaltet werden. `posXpwmPin` bewegt das flugzeug nach rechts, `negXpwmPin` nach links, `posYpwmPin` nach oben und `negYpwmPin` nach unten. Die bennenung ist analog zum Koordinatensystem aus der Mathematik.
+
+Danach werden die Pins für die Taster am Rand des Spiels definiert. Wird ein Taster gedrückt, so liest der dazugehörige Pin HIGH aus, wird er nicht gedrückt, dann LOW.
 
 ```c
 //Input Pins um den Joystick auszulesen
@@ -81,7 +90,7 @@ const int buttonRightPin = 4; //rechts
 const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
 ```
-</details>
+
 
 ```c
 //Joystick Kalibrierung
@@ -185,3 +194,7 @@ void loop() {
     delay(1);
 }
 ```
+<details>
+    <summary>Code</summary>
+    
+</details>
