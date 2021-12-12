@@ -57,7 +57,7 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 
 Anmerkungen:
 
-Der Joystick sieht in echt etwas anders aus, da es in der verwendeten Software (TinkerCAD) keinen gab.
+Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist.
 
 Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
