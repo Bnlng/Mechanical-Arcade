@@ -33,7 +33,7 @@ int sensorValueY = 0;
 int outputValueX = 0;
 int outputValueY = 0;
 
-//Variablen um den Status der Knöpfe an den rändern zwischenzuspeichern 
+//Variablen um den Status der Taster an den rändern zwischenzuspeichern 
 int buttonLeftState = 0;
 int buttonRightState = 0;
 int buttonTopState = 0;
