@@ -91,6 +91,9 @@ const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
 ```
 
+<h3>Joystick Kalibrierung</h3>
+
+Da der Joystick nicht perfekt ist gibt er in der ausgangsposition nicht genau 512 aus und bei voller Betätigung weder 0 noch 1023, dehalb muss jeder Joystick individuell Kalibriert werden. 
 
 ```c
 //Joystick Kalibrierung
