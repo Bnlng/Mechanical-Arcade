@@ -107,6 +107,11 @@ int joystickYMinValue = 155; //Minimaler Y-Wert, den der joystick ausgibt
 int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der ausgangsposition ausgibt
 int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Joyticks auf der Y-Achse
 ```
+
+<h3>Zwischenspeicher Variablen</h3>
+
+
+
 ```c
 //Variablen um die Ausgabewerte des Joysticks im loop zwischenzuspeichern
 int sensorValueX = 0; 
