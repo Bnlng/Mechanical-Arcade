@@ -63,9 +63,122 @@ Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
 <h2 id="soft">Software</h2>
 
-Die Programmiersprache von Arduino ist eine abwandlung von c++, genaueres über die Sprache kann [hier](https://www.arduino.cc/reference/de/) nachgelesen werden. Der gesamte Sketch wird im Folgenden genau erklärt, kann aber auch in den Dateien des Repositorys [ohne Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20ohne%20Erkl%C3%A4rungen.ino) und [mit Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20mit%20Erkl%C3%A4rungen.ino) eingesehen und runtergeladen werden.
+Die Programmiersprache von Arduino ist eine abwandlung von c++, genaueres über die Sprache kann [hier](https://www.arduino.cc/reference/de/) nachgelesen werden. Der gesamte Sketch wird im Folgenden Schritt für schritt erklärt, kann aber auch in den Dateien des Repositorys [ohne Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20ohne%20Erkl%C3%A4rungen.ino) und [mit Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20mit%20Erkl%C3%A4rungen.ino) eingesehen und heruntergeladen werden.
 
-<h3>Pins definieren</h3>
+<details>
+    <summary>Gesamter Sketch</summary>
+
+```c
+//Arduino Pins
+const int joystickXInputPin = A1;
+const int joystickYInputPin = A0;
+
+const int posXpwmPin = 10;
+const int negXpwmPin = 6;
+const int posYpwmPin = 9;
+const int negYpwmPin = 11;
+
+const int buttonLeftPin = 2;
+const int buttonRightPin = 4;
+const int buttonTopPin = 7;
+const int buttonBottomPin = 8;
+
+//Joystick callibration
+int joystickXMaxValue = 955;
+int joystickXMinValue = 210;
+int joystickXCenterValue = 511;
+int joystickXCenterTollerance = 20;
+
+int joystickYMaxValue = 890;
+int joystickYMinValue = 155;
+int joystickYCenterValue = 512;
+int joystickYCenterTollerance = 20;
+
+
+int sensorValueX = 0;
+int sensorValueY = 0;
+
+int outputValueX = 0;
+int outputValueY = 0;
+
+int buttonLeftState = 0;
+int buttonRightState = 0;
+int buttonTopState = 0;
+int buttonBottomState = 0;
+
+void setup() {
+    Serial.begin(9600);
+
+    pinMode(buttonLeftPin, INPUT);
+    pinMode(buttonRightPin, INPUT);
+    pinMode(buttonTopPin, INPUT);
+    pinMode(buttonBottomPin, INPUT);
+}
+
+void loop() {
+    buttonLeftState = digitalRead(buttonLeftPin);
+    buttonRightState = digitalRead(buttonRightPin);
+    buttonTopState = digitalRead(buttonTopPin);
+    buttonBottomState = digitalRead(buttonBottomPin);
+
+    //X-movement
+    sensorValueX = analogRead(joystickXInputPin);
+
+    if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && buttonLeftState == LOW) {
+        outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255); 
+        analogWrite(negXpwmPin, 0);
+        analogWrite(posXpwmPin, outputValueX);
+    }
+    else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && buttonRightState == LOW) {
+        outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255);
+        analogWrite(posXpwmPin, 0);
+        analogWrite(negXpwmPin, outputValueX);
+    }
+    else{
+        outputValueX = 0;
+        analogWrite(posXpwmPin, outputValueX);
+        analogWrite(negXpwmPin, outputValueX);
+    }
+
+    //Y-movement
+    sensorValueY = analogRead(joystickYInputPin);
+
+    if (sensorValueY > (joystickYCenterValue + joystickYCenterTollerance) && buttonTopState == LOW) {
+        outputValueY = map(sensorValueY, joystickYCenterValue + joystickYCenterTollerance, joystickYMaxValue, 0, 255);
+        analogWrite(negYpwmPin, 0);
+        analogWrite(posYpwmPin, outputValueY);
+    }
+    else if (sensorValueY < (joystickYCenterValue - joystickYCenterTollerance) && buttonBottomState == LOW) {
+        outputValueY = map(sensorValueY, joystickYCenterValue - joystickYCenterTollerance, joystickYMinValue, 0, 255);
+        analogWrite(posYpwmPin, 0);
+        analogWrite(negYpwmPin, outputValueY);
+    }
+    else{
+        outputValueY = 0;
+        analogWrite(posYpwmPin, outputValueY);
+        analogWrite(negYpwmPin, outputValueY);
+    }
+    
+    Serial.println("sensorX = ");
+    Serial.print(sensorValueX);
+    Serial.print("\t outputX = ");
+    Serial.print(outputValueX);
+
+    Serial.print("\tsensorY = ");
+    Serial.print(sensorValueY);
+    Serial.print("\t outputY = ");
+    Serial.print(outputValueY);
+    
+    delay(1);
+}
+```
+                                        
+</details>
+
+<h3>Schritt für Schritt Erklärung</h3>
+
+<details>
+    <summary><b>1. Pins definieren</b></summary>
 
 Als allererstes wird in Variablen gespeichert, welche Pins am Arfuino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert zwischen 0 und 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
 
@@ -91,9 +204,12 @@ const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
 ```
 
-<h3>Joystick Kalibrierung</h3>
+</details>
 
-Da der Joystick nicht perfekt ist gibt er in der ausgangsposition nicht genau 512 aus und bei voller Betätigung weder 0 noch 1023, dehalb muss jeder Joystick individuell Kalibriert werden. 
+<details>
+    <summary><b>2. Joystick Kalibrierung</b></summary>
+
+Da der Joystick nicht perfekt ist gibt er in der ausgangsposition nicht genau 512 aus und bei voller Betätigung weder 0 noch 1023, dehalb muss jeder Joystick individuell Kalibriert werden. Dazu müssen über den Seriellen Motor des Arduinos die Output-Werte des Joysticks ausgelesen werden. Die Werte, die in der Ausgangsstellung ausgegeben werden müssen bei `joystickXCenterValue` und `joystickYCenterValue` eingetragen werden. Anschließen müssen die maximalen und minimalen Werte, die der Joystick ausgibt, wenn er so stark wie möglich gedrückt wird in die Dafür vorgesehenden Variablen eingetragen werden.
 
 ```c
 //Joystick Kalibrierung
@@ -108,25 +224,34 @@ int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der ausgangspositi
 int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Joyticks auf der Y-Achse
 ```
 
-<h3>Zwischenspeicher Variablen</h3>
+</details>
 
-
+<details>
+    <summary><b>3. Zwischenspeicher Variablen</b></summary>
+    
+Dies sind die Variablen, in denen Werte im loop (der Teil des Sketches, der immer wieder wiederholt wird) zwischengespeichert werden. 
 
 ```c
 //Variablen um die Ausgabewerte des Joysticks im loop zwischenzuspeichern
 int sensorValueX = 0; 
 int sensorValueY = 0;
 
-//Variablen um die konvertierten Ausgabewerte des Joysticks im loop zwischenzuspeichern
+//Variablen um die für den Motor-Controller konvertierten Ausgabewerte des Joysticks im loop zwischenzuspeichern
 int outputValueX = 0;
 int outputValueY = 0;
 
-//Variablen um den Status der Knöpfe an den rändern zwischenzuspeichern 
+//Variablen um den Status der Taster an den rändern zwischenzuspeichern 
 int buttonLeftState = 0;
 int buttonRightState = 0;
 int buttonTopState = 0;
 int buttonBottomState = 0;
 ```
+
+</details>
+
+<details>
+    <summary><b>4. Setup</b></summary>
+
 ```c
 void setup() {
     Serial.begin(9600); //Startet den Plotter (für die Kallibrierung des Joysticks notwendig)
@@ -137,7 +262,14 @@ void setup() {
     pinMode(buttonTopPin, INPUT);
     pinMode(buttonBottomPin, INPUT);
 }
+```
 
+</details>
+
+<details>
+    <summary><b>5. loop</b></summary>
+
+```c
 void loop() {
     //liest den Status der Taster aus und Speichert diese zwischen
     buttonLeftState = digitalRead(buttonLeftPin);
@@ -164,8 +296,7 @@ void loop() {
         analogWrite(posXpwmPin, outputValueX);
         analogWrite(negXpwmPin, outputValueX);
     }
-```
-```c
+
     //Y-movement
     sensorValueY = analogRead(joystickYInputPin); //Liest den Ausgabewert des Joysticks für die Y-Achse aus und speichert diesen zwischen
 
@@ -187,6 +318,11 @@ void loop() {
         analogWrite(negYpwmPin, outputValueY);
     }
 ```
+</details>
+
+<details>
+    <summary><b>6. Output für den Plotter</b></summary>
+
 ```c
     //Output für den Plotter (für die Kallibrierung)
     Serial.println("sensorX = ");
@@ -202,7 +338,5 @@ void loop() {
     delay(1);
 }
 ```
-<details>
-    <summary>Code</summary>
-    
+
 </details>
