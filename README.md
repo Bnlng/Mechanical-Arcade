@@ -10,7 +10,7 @@
     <ul>
         <li><a href="#teil">3.1 Verwendete Bauteile</a></li>
         <li><a href="#aufb">3.2 Aufbau</a></li>
-        <li><a href="#schalt">3.3 Schaltung</a></li>
+        <li><a href="#schalt">3.3 Schaltplan</a></li>
     </ul>
     <li><a href="#soft">2. Software</a></li>
 </ul>
