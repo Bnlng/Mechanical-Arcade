@@ -177,8 +177,7 @@ void loop() {
 
 <h3>Schritt für Schritt Erklärung</h3>
 
-<details>
-    <summary><b>1. Pins definieren</b></summary>
+<h3>1. Pins definieren</h3>
 
 Als allererstes wird in Variablen gespeichert, welche Pins am Arduino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert von 0 bis 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
 
@@ -204,10 +203,7 @@ const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
 ```
 
-</details>
-
-<details>
-    <summary><b>2. Joystick Kalibrierung</b></summary>
+<h3>2. Joystick Kalibrierung</h3>
 
 Da der Joystick nicht perfekt ist gibt er in der ausgangsposition nicht genau 512 aus und bei voller Betätigung weder 0 noch 1023, dehalb muss jeder Joystick individuell Kalibriert werden. Dazu müssen über den Seriellen Motor des Arduinos die Output-Werte des Joysticks ausgelesen werden. Die Werte, die in der Ausgangsstellung ausgegeben werden müssen bei `joystickXCenterValue` und `joystickYCenterValue` eingetragen werden. Anschließen müssen die maximalen und minimalen Werte, die der Joystick ausgibt, wenn er so stark wie möglich gedrückt wird in die Dafür vorgesehenden Variablen eingetragen werden.
 
@@ -224,10 +220,7 @@ int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der ausgangspositi
 int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Joyticks auf der Y-Achse
 ```
 
-</details>
-
-<details>
-    <summary><b>3. Zwischenspeicher Variablen</b></summary>
+<h3>3. Zwischenspeicher Variablen</h3>
     
 Dies sind die Variablen, in denen Werte im loop (der Teil des Sketches, der immer wieder wiederholt wird) zwischengespeichert werden. Die funktionen der Variablen werden im Code-Bock beschrieben.
 
@@ -247,18 +240,14 @@ int buttonTopState = 0;
 int buttonBottomState = 0;
 ```
 
-</details>
+<h3>4. Setup</h3>
 
-<details>
-    <summary><b>4. Setup</b></summary>
-
-Dieser Teil des Sketches wird nur ein einziges mal zu begin des Progamms ausgeführt. `Serial.begin(9600);` Legt die Datenrate in Bit pro Sekunde (Baud) für die serielle Datenübertragung fest und macht das anzeigen von Daten über den Seriellen Monitor möglich.
+Dieser Teil des Sketches wird nur ein einziges mal beim Starten des Arduinos ausgeführt. `Serial.begin(9600);` Legt die Datenrate in Bit pro Sekunde (Baud) für die serielle Datenübertragung fest und macht das Anzeigen von Daten über den Seriellen Monitor möglich. `pinMode(Pin, INPUT);` legt den Pin als Input fest.
 
 ```c
 void setup() {
     Serial.begin(9600); (für die Kallibrierung des Joysticks notwendig)
 
-    //Legt die Pins, mit denen die Knöpfe gelesen werden als input fest
     pinMode(buttonLeftPin, INPUT);
     pinMode(buttonRightPin, INPUT);
     pinMode(buttonTopPin, INPUT);
@@ -266,19 +255,23 @@ void setup() {
 }
 ```
 
-</details>
+<h3>5. loop</h3>
 
-<details>
-    <summary><b>5. loop</b></summary>
+Alles innerhalb der geschwungenen Klammern von `void loop() {}` wird immer wieder ausgeführt. Um es besser erklären zu können ist der loop in verschiedene Abschnitte gegliedert.
+
+Als erstes werden die Taster ausgelesen und deren Zustand zwischengeseichert.
 
 ```c
 void loop() {
-    //liest den Status der Taster aus und Speichert diese zwischen
     buttonLeftState = digitalRead(buttonLeftPin);
     buttonRightState = digitalRead(buttonRightPin);
     buttonTopState = digitalRead(buttonTopPin);
     buttonBottomState = digitalRead(buttonBottomPin);
-    //X-movement
+```
+
+Ab jezt ist der Code die Bewegung des Flugzeugs auf der X-Achse zuständig. Zunächst wird der Ausgabewert des Joysticks für die X-Achse ausgelesen und gespeichert.
+
+```c
     sensorValueX = analogRead(joystickXInputPin); //Liest den Ausgabewert des Joysticks für die X-Achse aus und speichert diesen zwischen
 
     if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && buttonLeftState == LOW) { //Wenn der Joystick auf der X-Achse rechts von der Mitte ist und der Taster auf der rechten Seite nicht betätigt ist, dann:
@@ -298,7 +291,12 @@ void loop() {
         analogWrite(posXpwmPin, outputValueX);
         analogWrite(negXpwmPin, outputValueX);
     }
+```
 
+<details>
+    <summary>Das Gleiche für die Y-Achse</summary>
+
+```c
     //Y-movement
     sensorValueY = analogRead(joystickYInputPin); //Liest den Ausgabewert des Joysticks für die Y-Achse aus und speichert diesen zwischen
 
@@ -320,10 +318,10 @@ void loop() {
         analogWrite(negYpwmPin, outputValueY);
     }
 ```
+
 </details>
 
-<details>
-    <summary><b>6. Output für den Plotter</b></summary>
+<h3>6. Output für den Plotter</h3>
 
 ```c
     //Output für den Plotter (für die Kallibrierung)
@@ -340,5 +338,3 @@ void loop() {
     delay(1);
 }
 ```
-
-</details>
