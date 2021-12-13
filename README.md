@@ -281,7 +281,7 @@ Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs a
     }
 ```
 
-`else if()` ist wie `if()`, allerdings wird es nur ausgeführt, wenn die bedingung von `if() davor nicht erfüllt wurde. Dies Bedingung ist diesmal ähnlich wie die davor, nur ist Alles invertiert, d.h., dass nicht die bewegung nach Recht geregelt wird, sondern die nach Links.
+`else if()` ist wie `if()`, allerdings wird es nur ausgeführt, wenn die bedingung von `if()` davor nicht erfüllt wurde. Die Bedingung ist diesmal ähnlich wie die davor, nur ist Alles invertiert, d.h., dass nicht die bewegung nach Recht geregelt wird, sondern die nach Links.
 
 ```c
     else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && buttonRightState == LOW) { //Wenn der Joystick auf der X-Achse links von der Mitte ist und der Taster auf der linken Seite nicht betätigt ist, dann:
@@ -291,7 +291,7 @@ Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs a
     }
 ```
 
-Abschließend wird eine Else-Anweisung
+Abschließend wird eine Else-Anweisung verwendet, diese führt den Code in den Geschwungenen Klammern nur aus, wenn die beiden Bedingungen davor nicht erfüllt wurden. Der Code Setzt die geschwindigkeit des Motors (falls vorhanden) in beide Richtungen auf Null.
 
 ```c
     else{ //Wenn der Joystick in der Ausgangsposition ist, dann:
@@ -332,6 +332,8 @@ Abschließend wird eine Else-Anweisung
 </details>
 
 <h4>6. Output für den Plotter</h4>
+
+Als allerletztes werden verschiedene Werte an den Seriellen Monitor übermitteltu. Dies wird nur zur Kalibrirung des Joysticks und zur Fehlerbehebung benötigt.
 
 ```c
     //Output für den Plotter (für die Kallibrierung)
