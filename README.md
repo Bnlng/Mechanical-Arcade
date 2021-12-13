@@ -63,7 +63,7 @@ Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
 <h2 id="soft">Software</h2>
 
-Die Programmiersprache von Arduino ist eine abwandlung von c++, genaueres über die Sprache kann [hier](https://www.arduino.cc/reference/de/) nachgelesen werden. Der gesamte Sketch wird im Folgenden Schritt für schritt erklärt, kann aber auch in den Dateien des Repositorys [ohne Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20ohne%20Erkl%C3%A4rungen.ino) und [mit Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20mit%20Erkl%C3%A4rungen.ino) eingesehen und heruntergeladen werden.
+Die Programmiersprache von Arduino basiert auf c++, verfügt aber über zusätzliche befehle, genaueres über die Sprache kann [hier](https://www.arduino.cc/reference/de/) nachgelesen werden. Der gesamte Sketch wird im Folgenden Schritt für schritt erklärt, kann aber auch in den Dateien des Repositorys [ohne Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20ohne%20Erkl%C3%A4rungen.ino) und [mit Erklärungen](https://github.com/Bnlng/Mechanical-Dogfight/blob/main/Arduino%20Code%20mit%20Erkl%C3%A4rungen.ino) eingesehen und heruntergeladen werden.
 
 <details>
     <summary>Gesamter Sketch</summary>
@@ -180,9 +180,9 @@ void loop() {
 <details>
     <summary><b>1. Pins definieren</b></summary>
 
-Als allererstes wird in Variablen gespeichert, welche Pins am Arfuino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert zwischen 0 und 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
+Als allererstes wird in Variablen gespeichert, welche Pins am Arduino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert von 0 bis 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
 
-Als nächstes werden den verschiedenen Bewegungsrichtungen des Flugzeugs Pins zugewiesen, wenn diese Pins aktiviert werden gibt der Arduino ein PWM Signal ([Wikipedia](https://de.wikipedia.org/wiki/Pulsdauermodulation)) über diesen Pin aus, der Motor-Controller controller lässt daraufhin den Motor (X- oder Y-Achse) in eine bestimmte Richtung drehen. Soll sich die Drehrichtung ändern muss der Pin ausgeschaltet und ein anderer angeschaltet werden. `posXpwmPin` bewegt das flugzeug nach rechts, `negXpwmPin` nach links, `posYpwmPin` nach oben und `negYpwmPin` nach unten. Die bennenung ist analog zum Koordinatensystem aus der Mathematik.
+Als nächstes werden den verschiedenen Bewegungsrichtungen des Flugzeugs Pins zugewiesen, wenn diese Pins aktiviert werden gibt der Arduino ein PWM Signal ([mehr Infos](https://www.arduino.cc/en/Tutorial/Foundations/PWM)) über diesen Pin aus, der Motor-Controller lässt daraufhin den Motor (X- oder Y-Achse) in eine bestimmte Richtung drehen. Soll sich die Drehrichtung ändern muss der Pin ausgeschaltet und ein anderer angeschaltet werden. `posXpwmPin` bewegt das flugzeug nach rechts, `negXpwmPin` nach links, `posYpwmPin` nach oben und `negYpwmPin` nach unten. Die bennenung ist analog zum Koordinatensystem aus der Mathematik.
 
 Danach werden die Pins für die Taster am Rand des Spiels definiert. Wird ein Taster gedrückt, so liest der dazugehörige Pin HIGH aus, wird er nicht gedrückt, dann LOW.
 
@@ -229,18 +229,18 @@ int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Jo
 <details>
     <summary><b>3. Zwischenspeicher Variablen</b></summary>
     
-Dies sind die Variablen, in denen Werte im loop (der Teil des Sketches, der immer wieder wiederholt wird) zwischengespeichert werden. 
+Dies sind die Variablen, in denen Werte im loop (der Teil des Sketches, der immer wieder wiederholt wird) zwischengespeichert werden. Die funktionen der Variablen werden im Code-Bock beschrieben.
 
 ```c
-//Variablen um die Ausgabewerte des Joysticks im loop zwischenzuspeichern
-int sensorValueX = 0; 
+//Variablen um die Ausgabewerte (0-1023) des Joysticks im loop zwischenzuspeichern
+int sensorValueX = 0;
 int sensorValueY = 0;
 
-//Variablen um die für den Motor-Controller konvertierten Ausgabewerte des Joysticks im loop zwischenzuspeichern
+//Variablen um die für den Motor-Controller konvertierten Ausgabewerte (0-255) des Joysticks im loop zwischenzuspeichern
 int outputValueX = 0;
 int outputValueY = 0;
 
-//Variablen um den Status der Taster an den rändern zwischenzuspeichern 
+//Variablen um den Status (HIGHT oder LOW) der Taster an den rändern zwischenzuspeichern 
 int buttonLeftState = 0;
 int buttonRightState = 0;
 int buttonTopState = 0;
@@ -252,9 +252,11 @@ int buttonBottomState = 0;
 <details>
     <summary><b>4. Setup</b></summary>
 
+Dieser Teil des Sketches wird nur ein einziges mal zu begin des Progamms ausgeführt. `Serial.begin(9600);` Legt die Datenrate in Bit pro Sekunde (Baud) für die serielle Datenübertragung fest und macht das anzeigen von Daten über den Seriellen Monitor möglich.
+
 ```c
 void setup() {
-    Serial.begin(9600); //Startet den Plotter (für die Kallibrierung des Joysticks notwendig)
+    Serial.begin(9600); (für die Kallibrierung des Joysticks notwendig)
 
     //Legt die Pins, mit denen die Knöpfe gelesen werden als input fest
     pinMode(buttonLeftPin, INPUT);
