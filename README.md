@@ -177,7 +177,7 @@ void loop() {
 
 <h3>Schritt für Schritt Erklärung</h3>
 
-<h3>1. Pins definieren</h3>
+<h4>1. Pins definieren</h4>
 
 Als allererstes wird in Variablen gespeichert, welche Pins am Arduino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert von 0 bis 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
 
@@ -203,7 +203,7 @@ const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
 ```
 
-<h3>2. Joystick Kalibrierung</h3>
+<h4>2. Joystick Kalibrierung</h4>
 
 Da der Joystick nicht perfekt ist gibt er in der ausgangsposition nicht genau 512 aus und bei voller Betätigung weder 0 noch 1023, dehalb muss jeder Joystick individuell Kalibriert werden. Dazu müssen über den Seriellen Motor des Arduinos die Output-Werte des Joysticks ausgelesen werden. Die Werte, die in der Ausgangsstellung ausgegeben werden müssen bei `joystickXCenterValue` und `joystickYCenterValue` eingetragen werden. Anschließen müssen die maximalen und minimalen Werte, die der Joystick ausgibt, wenn er so stark wie möglich gedrückt wird in die Dafür vorgesehenden Variablen eingetragen werden.
 
@@ -220,7 +220,7 @@ int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der ausgangspositi
 int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Joyticks auf der Y-Achse
 ```
 
-<h3>3. Zwischenspeicher Variablen</h3>
+<h4>3. Zwischenspeicher Variablen</h4>
     
 Dies sind die Variablen, in denen Werte im loop (der Teil des Sketches, der immer wieder wiederholt wird) zwischengespeichert werden. Die funktionen der Variablen werden im Code-Bock beschrieben.
 
@@ -240,7 +240,7 @@ int buttonTopState = 0;
 int buttonBottomState = 0;
 ```
 
-<h3>4. Setup</h3>
+<h4>4. Setup</h4>
 
 Dieser Teil des Sketches wird nur ein einziges mal beim Starten des Arduinos ausgeführt. `Serial.begin(9600);` Legt die Datenrate in Bit pro Sekunde (Baud) für die serielle Datenübertragung fest und macht das Anzeigen von Daten über den Seriellen Monitor möglich. `pinMode(Pin, INPUT);` legt den Pin als Input fest.
 
@@ -255,9 +255,9 @@ void setup() {
 }
 ```
 
-<h3>5. loop</h3>
+<h4>5. loop</h4>
 
-Alles innerhalb der geschwungenen Klammern von `void loop() {}` wird immer wieder ausgeführt. Um es besser erklären zu können ist der loop in verschiedene Abschnitte gegliedert.
+Alles innerhalb der geschwungenen Klammern von `void loop() {}` wird immer wieder ausgeführt. Um die Funktionsweise besser erklären zu können ist der loop in verschiedene Abschnitte gegliedert.
 
 Als erstes werden die Taster ausgelesen und deren Zustand zwischengeseichert.
 
@@ -269,21 +269,31 @@ void loop() {
     buttonBottomState = digitalRead(buttonBottomPin);
 ```
 
-Ab jezt ist der Code die Bewegung des Flugzeugs auf der X-Achse zuständig. Zunächst wird der Ausgabewert des Joysticks für die X-Achse ausgelesen und gespeichert.
+Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs auf der X-Achse zuständig. Zunächst wird der Ausgabewert des Joysticks für die X-Achse ausgelesen und gespeichert. Danach wird `if () {}` verwendet, dabei wird überprüft, ob die in der Klammer stehende bedingung erfüllt ist und falls dies so ist wird der Code zwischen den geschwungenen Klammern ausgeführt. Als bedingung muss in unserem Fall der Output vom Joystick größer sein als er ist, wenn der Joystick in der Ausgangsposition ist und der Taster an der rechten Seite darf nicht batätigt sein. Zwischen den geschwungenen Klammern wird zunächst mit Hilfe der `map()`-Funktion der Ausgabewert des Joysticks in einen Wert zwischen 0 und 255 konvertiert. Anschließend wird über `analogWrite(Pin, 0-255)` die geschwindigkeit des Motors nach links (falls vohanden) auf Null und die geschwindigkeit nach Rechts auf den eben konvertierten Wert gesetzt. 0 entspricht stillstand und 255 volle geschwindigkeit.
 
 ```c
     sensorValueX = analogRead(joystickXInputPin); //Liest den Ausgabewert des Joysticks für die X-Achse aus und speichert diesen zwischen
 
-    if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && buttonLeftState == LOW) { //Wenn der Joystick auf der X-Achse rechts von der Mitte ist und der Taster auf der rechten Seite nicht betätigt ist, dann:
-        outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
+    if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && buttonLeftState == LOW) {
+        outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255);
         analogWrite(negXpwmPin, 0); //Setzt die geschwindigkeit des Motors nach links auf Null
         analogWrite(posXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach rechts an den Motor-Controller
     }
+```
+
+
+
+```c
     else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && buttonRightState == LOW) { //Wenn der Joystick auf der X-Achse links von der Mitte ist und der Taster auf der linken Seite nicht betätigt ist, dann:
         outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
         analogWrite(posXpwmPin, 0); //Setzt die geschwindigkeit des Motors nach rechts auf Null
         analogWrite(negXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach links an den Motor-Controller
     }
+```
+
+
+
+```c
     else{ //Wenn der Joystick in der Ausgangsposition ist, dann:
         outputValueX = 0; //setzt Variable für die Motorgeschwindigkeit auf 0
 
@@ -321,7 +331,7 @@ Ab jezt ist der Code die Bewegung des Flugzeugs auf der X-Achse zuständig. Zun�
 
 </details>
 
-<h3>6. Output für den Plotter</h3>
+<h4>6. Output für den Plotter</h4>
 
 ```c
     //Output für den Plotter (für die Kallibrierung)
