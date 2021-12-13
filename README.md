@@ -269,7 +269,7 @@ void loop() {
     buttonBottomState = digitalRead(buttonBottomPin);
 ```
 
-Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs auf der X-Achse zuständig. Zunächst wird der Ausgabewert des Joysticks für die X-Achse ausgelesen und gespeichert. Danach wird `if () {}` verwendet, dabei wird überprüft, ob die in der Klammer stehende bedingung erfüllt ist und falls dies so ist wird der Code zwischen den geschwungenen Klammern ausgeführt. Als bedingung muss in unserem Fall der Output vom Joystick größer sein als er ist, wenn der Joystick in der Ausgangsposition ist und der Taster an der rechten Seite darf nicht batätigt sein. Zwischen den geschwungenen Klammern wird zunächst mit Hilfe der `map()`-Funktion der Ausgabewert des Joysticks in einen Wert zwischen 0 und 255 konvertiert. Anschließend wird über `analogWrite(Pin, 0-255)` die geschwindigkeit des Motors nach links (falls vohanden) auf Null und die geschwindigkeit nach Rechts auf den eben konvertierten Wert gesetzt. 0 entspricht stillstand und 255 volle geschwindigkeit.
+Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs auf der X-Achse zuständig. Zunächst wird der Ausgabewert des Joysticks für die X-Achse ausgelesen und gespeichert. Danach wird `if() {}` verwendet, dabei wird überprüft, ob die in der Klammer stehende bedingung erfüllt ist und falls dies so ist wird der Code zwischen den geschwungenen Klammern ausgeführt. Als bedingung muss in unserem Fall der Output vom Joystick größer sein als er ist, wenn der Joystick in der Ausgangsposition ist und der Taster an der rechten Seite darf nicht batätigt sein. Zwischen den geschwungenen Klammern wird zunächst mit Hilfe der `map()`-Funktion der Ausgabewert des Joysticks in einen Wert zwischen 0 und 255 konvertiert. Anschließend wird über `analogWrite(Pin, 0-255)` die geschwindigkeit des Motors nach links (falls vohanden) auf Null und die geschwindigkeit nach Rechts auf den eben konvertierten Wert gesetzt. 0 entspricht stillstand und 255 voller Geschwindigkeit.
 
 ```c
     sensorValueX = analogRead(joystickXInputPin); //Liest den Ausgabewert des Joysticks für die X-Achse aus und speichert diesen zwischen
@@ -281,7 +281,7 @@ Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs a
     }
 ```
 
-
+`else if()` ist wie `if()`, allerdings wird es nur ausgeführt, wenn die bedingung von `if() davor nicht erfüllt wurde. Dies Bedingung ist diesmal ähnlich wie die davor, nur ist Alles invertiert, d.h., dass nicht die bewegung nach Recht geregelt wird, sondern die nach Links.
 
 ```c
     else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && buttonRightState == LOW) { //Wenn der Joystick auf der X-Achse links von der Mitte ist und der Taster auf der linken Seite nicht betätigt ist, dann:
@@ -291,7 +291,7 @@ Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs a
     }
 ```
 
-
+Abschließend wird eine Else-Anweisung
 
 ```c
     else{ //Wenn der Joystick in der Ausgangsposition ist, dann:
