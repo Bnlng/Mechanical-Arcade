@@ -21,7 +21,7 @@ Dies ist die Projektseite für unser Informatikprojekt des ersten Halbjahres. Un
     
 <h2 id="proj">Das Projekt</h2>
 
-"Mechanical Dogfight" ist ein Singleplayer Computerspiel auf Arduino-Basis, dessen Inhalt ein Luftkampf (engl. Dogfight) zwischen zwei Flugzeugen ist. Der Spieler steuert das Verfolgerflugzeug, eine Englische Supermarine Spitfire, mit einem Joystick. Das Besondere an diesem Spiel ist, dass es sich nicht auf einem Bildschirm abspielt, sondern mit echten Modellen der Flugzeuge welche sich zwei dimensional im Spielekasten bewegen können. Das Gegnerflugzeug wird automatisch vom Arduino gesteuert und muss vom Spieler mittels des Bordgeschützes getroffen werden. Zurzeit ist nur das Flugzeug des Spielers fertiggestellt, daher handelt es sich bei diesem Projekt erst einmal nur um eine Art „Proof of Concept“. Alles funktioniert wie gedacht, weshalb wir das Projekt als vollen Erfolg ansehen. Wer das Projekt in bewegung sehen möchte kann es sich [hier](https://www.youtube.com/watch?v=7guUQbI5MUM) aus der Sicht des Spielers anschauen und [hier](https://www.youtube.com/watch?v=KiZhklhcncI) von hinten, wobei auch die Mechanik des Spiels zu sehen ist.
+"Mechanical Dogfight" ist ein Singleplayer Computerspiel auf Arduino-Basis, dessen Inhalt ein Luftkampf (engl. Dogfight) zwischen zwei Flugzeugen ist. Der Spieler steuert das Verfolgerflugzeug, eine englische Supermarine Spitfire, mit einem Joystick. Das Besondere an diesem Spiel ist, dass es sich nicht auf einem Bildschirm abspielt, sondern mit echten Modellen der Flugzeuge, welche sich zweidimensional im Spielekasten bewegen können. Das Gegnerflugzeug wird automatisch vom Arduino gesteuert und muss vom Spieler mittels des Bordgeschützes getroffen werden. Zurzeit ist nur das Flugzeug des Spielers fertiggestellt, daher handelt es sich bei diesem Projekt erst einmal nur um eine Art „Proof of Concept“. Alles funktioniert, wie gedacht, weshalb wir das Projekt als vollen Erfolg ansehen. Wer das Projekt in Bewegung sehen möchte kann es sich [hier](https://www.youtube.com/watch?v=7guUQbI5MUM) aus der Sicht des Spielers anschauen und [hier](https://www.youtube.com/watch?v=KiZhklhcncI) von hinten, wobei auch die Mechanik des Spiels zu sehen ist.
 
 ![image](https://user-images.githubusercontent.com/88386307/146064005-e8b3867f-a870-4606-aaa1-cd23eb98e46d.png)
 
@@ -29,7 +29,7 @@ Dies ist die Projektseite für unser Informatikprojekt des ersten Halbjahres. Un
 
 <h3 id="aufb">Aufbau</h3>
 
-Damit das Flugzeug alle Punkte erreichen kann haben wir zwei achsiges mechanisches Bewegungssystem gebaut. Es basiert auf zwei Schlitten, welche sich jeweils wagrecht und senkrecht ind Schienen bewegen. Die Bewegung wird durch zwei Getriebemotoren ermöglicht, welche die Rotation mittels Zahnräder und Zahnstangen in lineare bewegung auf die Schlitten übertragen. Der komplette Aufbau für die senkrechte Bewegung ist auf dem Schlitten für die Wagerechte Bewegung montiert. Der Aufbau und die Funktion wird verständlicher bei Betrachtung des folgenden Bildes und des 3D-Modelles (zu öffnen mit 3D-Viewer, bei Windows 10 vorinstalliert).
+Damit das Flugzeug alle Punkte erreichen kann haben wir zweiachsiges mechanisches Bewegungssystem gebaut. Es basiert auf zwei Schlitten, welche sich jeweils waagerecht und senkrecht in Schienen bewegen. Die Bewegung wird durch zwei Getriebemotoren ermöglicht, welche die Rotation mittels Zahnräder und Zahnstangen in lineare Bewegung auf die Schlitten übertragen. Der komplette Aufbau für die senkrechte Bewegung ist auf dem Schlitten für die Waagerechte Bewegung montiert. Der Aufbau und die Funktion werden verständlicher bei Betrachtung des folgenden Bildes und des 3D-Modelles (zu öffnen mit 3D-Viewer, bei Windows 10 vorinstalliert).
  
 ![image](https://user-images.githubusercontent.com/88386307/144764417-1840f16e-6fd4-458f-b5d3-6f260564718b.png)
 
@@ -46,7 +46,7 @@ Dieses versorgt den Arduino und die Motoren mit Strom. Der Arduino Nano benötig
 
 <h4>Arduino</h4>
 
-Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um einen Microcontroller mit mehreren analogen und digitalen Ein und Ausgängen. Dieser ist das Herzstück unseres Projektes und für die verarbeitung der Steuersignale und später für das Steuern des Gegnerflugzeuges und das Punktezählen zuständig.
+Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um einen Microcontroller mit mehreren analogen und digitalen Ein und Ausgängen. Dieser ist das Herzstück unseres Projektes und für die Verarbeitung der Steuersignale und später für das Steuern des Gegnerflugzeuges und das Punktezählen zuständig.
 
 <h4>DC-Motor-Treiber</h4>
  Hierbei handelt es sich um den L298N dual H-Bridge Driver. Dieser ermöglicht die Steuerung von zwei Gleichstrommotoren. Also die Änderung von Drehrichtung und Geschwindigkeit.
@@ -57,25 +57,25 @@ Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind 
 
 <h4>3D-Gedruckte Komponenten</h4>
 
-Alle, im oben zu sehenden 3D-Modell schwarz gefärbten Komponenten sind mittels einem FDM Druckers aus PLA gefertigt worden. Die Hauptkomponenten sind die zwei Schlitten auf denen die Motoren und das Flugzeug montiert sind, sowie die Zahnräder und Zahnstangen für die Kraftübertragung des Motors.  Die Teile wurden von uns selbst in dem CAD-Programm <I>Fusion 360</I> entwickelt.  Nur das Flugzeugmodell ist ein 3D-Scan aus dem Internet, jedoch musste hier die Einbettung für den Laserpointer in den Rumpf modelliert werden.
+Alle, im oben zu sehenden 3D-Modell schwarz gefärbten Komponenten sind mittels einem FDM Druckers aus PLA gefertigt worden. Die Hauptkomponenten sind die zwei Schlitten, auf denen die Motoren und das Flugzeug montiert sind, sowie die Zahnräder und Zahnstangen für die Kraftübertragung des Motors.  Die Teile wurden von uns selbst in dem CAD-Programm <I>Fusion 360</I> entwickelt.  Nur das Flugzeugmodell ist ein 3D-Scan aus dem Internet, jedoch musste hier die Einbettung für den Laserpointer in den Rumpf modelliert werden.
 
 <h4>Schubladenschienen</h4>
 
-Die Schienen auf denen sich die Schlitten bewegen sind die äußeren Schienen von Kugelauszügen. Diese haben links und rechts an der Innenseite eine halbkreisförmige Nut. Diese Nuten bilden die einzige Kontaktfläche zwischen Schlitten und Schiene. Den inneren Teil des Kugelauszuges dienen zur Stabilisierung der Zahnstangen, welche aufgrund der Abmessungen in zwei Teilen gedruckt werden mussten.
+Die Schienen, auf denen sich die Schlitten bewegen sind die äußeren Schienen von Kugelauszügen. Diese haben links und rechts an der Innenseite eine halbkreisförmige Nut. Diese Nuten bilden die einzige Kontaktfläche zwischen Schlitten und Schiene. Den inneren Teil des Kugelauszuges dienen zur Stabilisierung der Zahnstangen, welche aufgrund der Abmessungen in zwei Teilen gedruckt werden mussten.
 
 <h4>Joystick</h4>
 
-Bei dem Joystick handelt es sich um einen Logitch Wingman Extreme aus dem Jahre 1994. Die Ermittlung der Stellung erfolg mittels zwei Drehpotentimetern, eines für die X-Achse und eines für die Y-Achse. Potentiometer sind Spannugsteiler. An zwei der drei Anschlüsse wird eine Spannung angelegt, an dem dritten Anschluss ist nun abhängig vom Winkel der Drehachse eine Spannung messbar. Diese Spannung dient dem Arduino als Inputwert für die Bewegung des Flugzeuges.
+Bei dem Joystick handelt es sich um einen Logitech Wingman Extreme aus dem Jahre 1994. Die Ermittlung der Stellung erfolgt mittels zwei Drehpotentimetern, eines für die X-Achse und eines für die Y-Achse. Potentiometer sind Spannungsteiler. An zwei der drei Anschlüsse wird eine Spannung angelegt, an dem dritten Anschluss ist nun abhängig vom Winkel der Drehachse eine Spannung messbar. Diese Spannung dient dem Arduino als Inputwert für die Bewegung des Flugzeuges.
 
 <h4>Taster</h4>
 
-An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wird, wenn die Bewegungsschlitten an das Ende der Bewegungsachsen stoßen. Wir haben Taster mit Rollenhebel geutzt, da diese einen sehr weichen und progressiven Druckpunkt haben. Dies beugt schäden am Material vor, wenn man mit hoher Geschwindigkeit gegen einen Taster fährt.
+An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wird, wenn die Bewegungsschlitten an das Ende der Bewegungsachsen stoßen. Wir haben Taster mit Rollenhebel genutzt, da diese einen sehr weichen und progressiven Druckpunkt haben. Dies beugt Schäden am Material vor, wenn man mit hoher Geschwindigkeit gegen einen Taster fährt.
 
 <h4>Weitere Bauteile</h4>
 
 * 1k Ω Widerstände - Pull-Down widerstand für die Taster
 * Ø4mm Aluminiumstange - Verbindung Flugzeug<->Y-Schlitten
-* Multiplexplatten - Motageplatte (später Gehäuse)
+* Multiplexplatten - Montageplatte (später Gehäuse)
 * Steckbrett und Kabel - Aufbau der Elektrik
 
 <h3 id="schalt">Schaltplan</h3>
@@ -88,16 +88,16 @@ An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wir
 Der Arduino und die Motoren werden mit einer Spannung von mind. 7V vom Netzteil versorgt. Die Arbeitsspannung für In- und Outputsignale liegt bei 5V. Hierzu hat der Arduino Nano einen Spannungswandel verbaut. Die Potentiometer und Taster sind also an den 5V Pin des Arduinos angeschlossen. 
 
 **Endtaster:**
-Den Tastern ist jeweils ein 1k Ω Widerstand als Pull-Down Widerstand vorgeschaltet. Diese sind notwendig, damit 1. das Spannungsniveau des Inputpins bei nicht betätigung des Tasters bei Ground also 0 liegt und 2. damit bei betätigem kein zu hoher Strom fließt.
+Den Tastern ist jeweils ein 1k Ω Widerstand als Pull-Down Widerstand vorgeschaltet. Diese sind notwendig, damit 1. das Spannungsniveau des Inputpins bei nicht Betätigung des Tasters bei Ground also 0 liegt und 2. damit bei Betätigung kein zu hoher Strom fließt.
 
 **Joystick:**
-Die zwei Joysticks sind paralell geschaltet und die Outputpins sind an den Arduino Inputpins A0 und A1 angeschlossen.
+Die zwei Joysticks sind parallel geschaltet und die Outputpins sind an den Arduino Inputpins A0 und A1 angeschlossen.
 
 **Motor Treiber:** 
-Das Motortreiber Board L298N wird vom Netzteil mit Spannung versorgt. Die Motoren sind an diesem Board angeschlossen. Zu jedem Motor gehören zwei Inputleitungen, welche jeweils an einen PWM-Outputpin des Arduinos angeschlossen sind. Liegt auf der einen Leitung eines Input-paares eine Spannung zwischen 0 und 5V an, so dreht sich de Motor in die eine Richtung, wenn auf der anderen Leitung eine Spannung anliegtin die andere Richtung. Die Spannung die an den Motor geht ist proportional zur Inputspannung. Wenn die Inputspannung an das Treiberborad 1,5V , also 30% von 5V, beträgt, so wird die Outputspannung an den Motor 30% von der Betriebsspannung des Treiberborads betragen, also 30% von 7V. 
+Das Motortreiber Board L298N wird vom Netzteil mit Spannung versorgt. Die Motoren sind an diesem Board angeschlossen. Zu jedem Motor gehören zwei Inputleitungen, welche jeweils an einen PWM-Outputpin des Arduinos angeschlossen sind. Liegt auf der einen Leitung eines Input-Paares eine Spannung zwischen 0 und 5V an, so dreht sich de Motor in die eine Richtung, wenn auf der anderen Leitung eine Spannung anliegt in die andere Richtung. Die Spannung, die an den Motor geht ist proportional zur Inputspannung. Wenn die Inputspannung an das Treiberborad 1,5V , also 30% von 5V, beträgt, so wird die Outputspannung an den Motor 30% von der Betriebsspannung des Treiberborads betragen, also 30% von 7V. 
 
 
-**Anmerkungen:** Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist. Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
+**Anmerkungen:** Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technisch gesehen genau das gleiche ist. Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
 <h2 id="soft">Software</h2>
 
