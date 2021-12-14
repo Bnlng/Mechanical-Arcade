@@ -82,11 +82,11 @@ An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wir
 
 <h4>Erklärung der Elektrik</h4>
 
-<u>Spannungsversorgung:</u>
+**Spannungsversorgung:**
 
 Der Arduino und die Motoren werden mit einer Spannung von mind. 7V vom Netzteil versorgt. Die Arbeitsspannung für In- und Outputsignale liegt bei 5V. Hierzu hat der Arduino Nano einen Spannungswandel verbaut. Die Potentiometer und Taster sind also an den 5V Pin des Arduinos angeschlossen. 
 
-<U>Endtaster</U>
+**Endtaster**
 
 Den Tastern ist jeweils ein 1k Ω Widerstand als Pull-Down Widerstand vorgeschaltet. Diese sind notwendig, damit 1. das Spannungsniveau des Inputpins bei nicht betätigung des Tasters bei Ground also 0 liegt und 2. damit bei betätigem kein zu hoher Strom fließt.
 
