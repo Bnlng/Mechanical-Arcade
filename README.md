@@ -8,8 +8,8 @@
     <li><a href="#proj">2. Das Projekt</a></li>
     <li><a href="#hard">3. Hardware</a></li>
     <ul>
-        <li><a href="#teil">3.1 Verwendete Bauteile</a></li>
-        <li><a href="#aufb">3.2 Aufbau</a></li>
+        <li><a href="#aufb">3.1 Aufbau</a></li>
+        <li><a href="#teil">3.2 Verwendete Bauteile</a></li>
         <li><a href="#schalt">3.3 Schaltplan</a></li>
     </ul>
     <li><a href="#soft">2. Software</a></li>
@@ -22,25 +22,6 @@
 
 <h2 id="hard">Hardware</h2>
 
-<h3 id="teil">Verwendete Bauteile</h3>
-
-* 1 Arduino
-* 1 5V Netzteil
-* 1 Steckbrett
-*   Steckbrettkabel
-*   Holzplatten
-* 1 DC-Motor-Controller
-* 2 DC-Motoren
-* 2 Zahnräder
-* 2 Zahnstangen
-* 2 Schienen
-* 1 dünne Metallstange
-* 1 Modellflugzeug
-* 1 kleiner Laser
-* 1 Joystick
-* 4 Taster
-* 4 1kΩ Widerstände
-
 <h3 id="aufb">Aufbau</h3>
 
 Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegungssystem mit zwei Achsen gebaut. Wie genau dieses System aufgebaut ist zeigt folgende Grafik.
@@ -50,6 +31,33 @@ Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegun
 Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des Repositorys eingesehen werden.
 
 Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vorführungsvideo aus der Ansicht von hinten, also vom späteren Inneren des Spielekastens. [Hier](https://www.youtube.com/watch?v=7guUQbI5MUM) findet sich ein Vorführungsvideo aus der Spieleransicht.
+
+<h3 id="teil">Verwendete Bauteile</h3>
+
+* Arduino
+* 5V Netzteil
+* Steckbrett
+* Steckbrettkabel
+* Holzplatten
+* DC-Motor-Treiber
+* DC-Motoren
+* Zahnräder
+* Zahnstangen
+* Schienen
+* dünne Metallstange
+* Modellflugzeug
+* kleiner Laser
+* Joystick
+* Taster
+* 1kΩ Widerstände
+
+<h4>5V Netzteil</h4>
+<h4>Arduino</h4>
+<h4>Joystick</h4>
+<h4>DC-Motor-Treiber</h4>
+<h4>DC-Motor</h4>
+<h4>Joystic</h4>
+<h4>Taster</h4>
 
 <h3 id="schalt">Schaltplan</h3>
 
