@@ -89,7 +89,9 @@ Der Arduino und die Motoren werden mit einer Spannung von mind. 7V vom Netzteil 
 Den Tastern ist jeweils ein 1k Ω Widerstand als Pull-Down Widerstand vorgeschaltet. Diese sind notwendig, damit 1. das Spannungsniveau des Inputpins bei nicht betätigung des Tasters bei Ground also 0 liegt und 2. damit bei betätigem kein zu hoher Strom fließt.
 
 **Joystick:**
+Die zwei Joysticks sind paralell geschaltet und die Outputpins sind an den Arduino Inputpins A0 und A1 angeschlossen.
 
+**Motor Treiber**
 
 
 **Anmerkungen:** Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist. Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
