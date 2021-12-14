@@ -35,7 +35,7 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 <h3 id="teil">Verwendete Bauteile</h3>
 
 * Arduino
-* 5V Netzteil
+* Netzteil (mind. 6V)
 * Steckbrett
 * Steckbrettkabel
 * Holzplatten
