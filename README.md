@@ -91,7 +91,8 @@ Den Tastern ist jeweils ein 1k Ω Widerstand als Pull-Down Widerstand vorgeschal
 **Joystick:**
 Die zwei Joysticks sind paralell geschaltet und die Outputpins sind an den Arduino Inputpins A0 und A1 angeschlossen.
 
-**Motor Treiber**
+**Motor Treiber:** 
+Das Motortreiber Board L298N wird vom Netzteil mit Spannung versorgt. Die Motoren sind an diesem Board angeschlossen. Zu jedem Motor gehören zwei Inputleitungen, welche jeweils an einen PWM-Outputpin des Arduinos angeschlossen sind. Liegt auf der einen Leitung eines Input-paares eine Spannung zwischen 0 und 5V an, so dreht sich de Motor in die eine Richtung, wenn auf der anderen Leitung eine Spannung anliegtin die andere Richtung. Die Spannung die an den Motor geht ist proportional zur Inputspannung. Wenn die Inputspannung an das Treiberborad 1,5V , also 30% von 5V, beträgt, so wird die Outputspannung an den Motor 30% von der Betriebsspannung des Treiberborads betragen, also 30% von 7V. 
 
 
 **Anmerkungen:** Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist. Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
