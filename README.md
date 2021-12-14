@@ -72,9 +72,11 @@ Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind 
 
 <h4>Joystic</h4>
 
-Bei dem Joystick handelt es sich um einen Logitch Wingman Extreme aus dem Jahre 1994. Die Ermittlung der Stellung erfolg mittels zwei Drehpotentimetern, eines für die X-Achse und eines für die Y-Achse. Potentiometer sind Spannugsteiler
+Bei dem Joystick handelt es sich um einen Logitch Wingman Extreme aus dem Jahre 1994. Die Ermittlung der Stellung erfolg mittels zwei Drehpotentimetern, eines für die X-Achse und eines für die Y-Achse. Potentiometer sind Spannugsteiler. An zwei der drei Anschlüsse wird eine Spannung angelegt, an dem dritten Anschluss ist nun abhängig vom Winkel der Drehachse eine Spannung messbar. Diese Spannung dient dem Arduino als Inputwert für die Bewegung des Flugzeuges.
 
 <h4>Taster</h4>
+
+An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wird, wenn die Bewegungsschlitten an das Ende der Bewegungsachsen stoßen. Wir haben Taster mit Rollenhebel geutzt, da diese einen sehr weichen und progressiven Druckpunkt haben. Dies beugt schäden am Material vor, wenn man mit hoher Geschwindigkeit gegen einen Taster fährt.
 
 <h4>Weitere Bauteile</h4>
 
