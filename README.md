@@ -37,24 +37,19 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 
 <h3 id="teil">Verwendete Bauteile</h3>
 
-* Arduino
-* Netzteil (mind. 6V)
+
+
 * Steckbrett
 * Steckbrettkabel
 * Holzplatten
-* DC-Motor-Treiber
-* DC-Motoren
 * Zahnräder
 * Zahnstangen
-* Schienen
 * dünne Metallstange
 * Modellflugzeug
-* kleiner Laser
-* Joystick
-* Taster
+
 * 1kΩ Widerstände
 
-<h4>5V Netzteil</h4>
+<h4>Netzteil 7-9V</h4>
 
 Dieses versorgt den Arduino und die Motoren mit Strom. Der Arduino Nano benötigt eine Spannungsversorgung von 7 bis 12V um arbeiten zu können. Eine besonders hohe Leistung muss das Netzteil nicht aufweisen, da das gesamte Projekt noch keine Ströme über 1A gezogen hat.
 
@@ -68,6 +63,14 @@ Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um ei
 <h4>DC-Getriebemotoren</h4>
 
 Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind sie in der Lage deutlich mehr Drehmoment zu leisten. Dies ist für das Projekt notwendig, da die Motoren sonst nicht in der Lage wären auch nur eine Umdrehung zu machen.  
+
+<h4>3D-Gedruckte Komponenten</h4>
+
+Alle in dem 
+
+<h4>Schubladenschienen</h4>
+
+Die Schienen auf denen sich die Schlitten bewegen sind die äußeren Schienen von Kugelauszügen. Diese haben links und rechts an der Innenseite eine halbkreisförmige Nut. Diese Nuten bilden die einzige Kontaktfläche zwischen Schlitten und Schiene. Den inneren Teil des Kugelauszuges dienen zur Stabilisierung der Zahnstangen, welche aufgrund der Abmessungen in zwei Teilen gedruckt werden mussten.
 
 <h4>Joystick</h4>
 
