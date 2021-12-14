@@ -83,9 +83,12 @@ An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wir
 <h4>Erklärung der Elektrik</h4>
 
 <u>Spannungsversorgung:</u>
+
 Der Arduino und die Motoren werden mit einer Spannung von mind. 7V vom Netzteil versorgt. Die Arbeitsspannung für In- und Outputsignale liegt bei 5V. Hierzu hat der Arduino Nano einen Spannungswandel verbaut. Die Potentiometer und Taster sind also an den 5V Pin des Arduinos angeschlossen. 
 
-<u>Endtaster</u>
+<U>Endtaster</U>
+
+Den Tastern ist jeweils ein 1k Ω Widerstand als Pull-Down Widerstand vorgeschaltet. Diese sind notwendig, damit 1. das Spannungsniveau des Inputpins bei nicht betätigung des Tasters bei Ground also 0 liegt und 2. damit bei betätigem kein zu hoher Strom fließt.
 
 
 **Anmerkungen:** Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist. Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
