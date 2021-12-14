@@ -72,7 +72,7 @@ Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind 
 
 <h4>Joystic</h4>
 
-Bei dem Joystick handelt es sich um einen Logitch-Wingman 
+Bei dem Joystick handelt es sich um einen Logitch Wingman Extreme aus dem Jahre 1994. Die Ermittlung der Stellung erfolg mittels zwei Drehpotentimetern, eines für die X-Achse und eines für die Y-Achse. Potentiometer sind Spannugsteiler
 
 <h4>Taster</h4>
 
