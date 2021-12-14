@@ -38,17 +38,6 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 <h3 id="teil">Verwendete Bauteile</h3>
 
 
-
-* Steckbrett
-* Steckbrettkabel
-* Holzplatten
-* Zahnräder
-* Zahnstangen
-* dünne Metallstange
-* Modellflugzeug
-
-* 1kΩ Widerstände
-
 <h4>Netzteil 7-9V</h4>
 
 Dieses versorgt den Arduino und die Motoren mit Strom. Der Arduino Nano benötigt eine Spannungsversorgung von 7 bis 12V um arbeiten zu können. Eine besonders hohe Leistung muss das Netzteil nicht aufweisen, da das gesamte Projekt noch keine Ströme über 1A gezogen hat.
@@ -66,7 +55,7 @@ Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind 
 
 <h4>3D-Gedruckte Komponenten</h4>
 
-Alle, im oben zu sehenden 3D-Modell schwarz gefärbten Komponenten sind mittels einem FDM Druckers aus PLA gefertigt worden. Die Teile wurden von uns selbst in dem CAD-Programm <I>Fusion 360</I>
+Alle, im oben zu sehenden 3D-Modell schwarz gefärbten Komponenten sind mittels einem FDM Druckers aus PLA gefertigt worden. Die Hauptkomponenten sind die zwei Schlitten auf denen die Motoren und das Flugzeug montiert sind, sowie die Zahnräder und Zahnstangen für die Kraftübertragung des Motors.  Die Teile wurden von uns selbst in dem CAD-Programm <I>Fusion 360</I> entwickelt.  Nur das Flugzeugmodell ist ein 3D-Scan aus dem Internet, jedoch musste hier die Einbettung für den Laserpointer in den Rumpf modelliert werden.
 
 <h4>Schubladenschienen</h4>
 
@@ -81,6 +70,11 @@ Bei dem Joystick handelt es sich um einen Logitch Wingman Extreme aus dem Jahre 
 An jedes Ende der Bewegungsachsen ist ein Taster montiert, welcher gedrückt wird, wenn die Bewegungsschlitten an das Ende der Bewegungsachsen stoßen. Wir haben Taster mit Rollenhebel geutzt, da diese einen sehr weichen und progressiven Druckpunkt haben. Dies beugt schäden am Material vor, wenn man mit hoher Geschwindigkeit gegen einen Taster fährt.
 
 <h4>Weitere Bauteile</h4>
+
+* 1k Ω Widerstände - Pull-Down widerstand für die Taster
+* Ø4mm Aluminiumstange - Verbindung Flugzeug<->Y-Schlitten
+* Multiplexplatten - Motageplatte (später Gehäuse)
+* Steckbrett und Kabel - Aufbau der Elektrik
 
 <h3 id="schalt">Schaltplan</h3>
 
