@@ -15,13 +15,13 @@ const int buttonTopPin = 7; //oben
 const int buttonBottomPin = 8; //unten
 
 //Joystick Kalibrierung
-int joystickXMaxValue = 955; //Maximaler X-Wert, den der joystick ausgibt
-int joystickXMinValue = 210; //Minimaler X-Wert, den der joystick ausgibt
+int joystickXMaxValue = 955; //Maximaler X-Wert, den der Joystick ausgibt
+int joystickXMinValue = 210; //Minimaler X-Wert, den der Joystick ausgibt
 int joystickXCenterValue = 516; //X-Wert, den der Joystick in der Ausgangsposition ausgibt
 int joystickXCenterTollerance = 6; //Tolleranz für die Ausgangsposition des Joyticks auf der X-Achse
 
-int joystickYMaxValue = 890; //Maximaler Y-Wert, den der joystick ausgibt
-int joystickYMinValue = 155; //Minimaler Y-Wert, den der joystick ausgibt
+int joystickYMaxValue = 890; //Maximaler Y-Wert, den der Joystick ausgibt
+int joystickYMinValue = 155; //Minimaler Y-Wert, den der Joystick ausgibt
 int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der Ausgangsposition ausgibt
 int joystickYCenterTollerance = 12; //Tolleranz für die Ausgangsposition des Joyticks auf der Y-Achse
 
