@@ -52,12 +52,22 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 * 1kΩ Widerstände
 
 <h4>5V Netzteil</h4>
+
+Da der Arduino nicht genug
+
 <h4>Arduino</h4>
+
 <h4>Joystick</h4>
+
 <h4>DC-Motor-Treiber</h4>
+
 <h4>DC-Motor</h4>
+
 <h4>Joystic</h4>
+
 <h4>Taster</h4>
+
+<h4>Weitere Bauteile</h4>
 
 <h3 id="schalt">Schaltplan</h3>
 
