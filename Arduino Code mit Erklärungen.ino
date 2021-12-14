@@ -8,7 +8,7 @@ const int negXpwmPin = 6; //links
 const int posYpwmPin = 9; //oben
 const int negYpwmPin = 11; //unten
 
-//Pins für die Taster an den rändern des Spiels 
+//Pins für die Taster an den Rändern des Spiels 
 const int buttonLeftPin = 2; //links
 const int buttonRightPin = 4; //rechts
 const int buttonTopPin = 7; //oben
@@ -17,13 +17,13 @@ const int buttonBottomPin = 8; //unten
 //Joystick Kalibrierung
 int joystickXMaxValue = 955; //Maximaler X-Wert, den der joystick ausgibt
 int joystickXMinValue = 210; //Minimaler X-Wert, den der joystick ausgibt
-int joystickXCenterValue = 516; //X-Wert, den der Joystick in der ausgangsposition ausgibt
-int joystickXCenterTollerance = 6; //Tolleranz für die ausgangsposition des Joyticks auf der X-Achse
+int joystickXCenterValue = 516; //X-Wert, den der Joystick in der Ausgangsposition ausgibt
+int joystickXCenterTollerance = 6; //Tolleranz für die Ausgangsposition des Joyticks auf der X-Achse
 
 int joystickYMaxValue = 890; //Maximaler Y-Wert, den der joystick ausgibt
 int joystickYMinValue = 155; //Minimaler Y-Wert, den der joystick ausgibt
-int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der ausgangsposition ausgibt
-int joystickYCenterTollerance = 12; //Tolleranz für die ausgangsposition des Joyticks auf der Y-Achse
+int joystickYCenterValue = 522; //Y-Wert, den der Joystick in der Ausgangsposition ausgibt
+int joystickYCenterTollerance = 12; //Tolleranz für die Ausgangsposition des Joyticks auf der Y-Achse
 
 //Variablen um die Ausgabewerte des Joysticks im loop zwischenzuspeichern
 int sensorValueX = 0; 
@@ -33,7 +33,7 @@ int sensorValueY = 0;
 int outputValueX = 0;
 int outputValueY = 0;
 
-//Variablen um den Status der Taster an den rändern zwischenzuspeichern 
+//Variablen um den Status der Taster an den Rändern zwischenzuspeichern 
 int buttonLeftState = 0;
 int buttonRightState = 0;
 int buttonTopState = 0;
@@ -59,19 +59,19 @@ void loop() {
     sensorValueX = analogRead(joystickXInputPin); //Liest den Ausgabewert des Joysticks für die X-Achse aus und speichert diesen zwischen
 
     if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && buttonLeftState == LOW) { //Wenn der Joystick auf der X-Achse rechts von der Mitte ist und der Taster auf der rechten Seite nicht betätigt ist, dann:
-        outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
-        analogWrite(negXpwmPin, 0); //Setzt die geschwindigkeit des Motors nach links auf Null
-        analogWrite(posXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach rechts an den Motor-Controller
+        outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine Geschwindigkeit für den Motor-Controller
+        analogWrite(negXpwmPin, 0); //Setzt die Geschwindigkeit des Motors nach links auf Null
+        analogWrite(posXpwmPin, outputValueX); //Übermittelt die Geschwindigkeit nach rechts an den Motor-Controller
     }
     else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && buttonRightState == LOW) { //Wenn der Joystick auf der X-Achse links von der Mitte ist und der Taster auf der linken Seite nicht betätigt ist, dann:
-        outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
-        analogWrite(posXpwmPin, 0); //Setzt die geschwindigkeit des Motors nach rechts auf Null
-        analogWrite(negXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach links an den Motor-Controller
+        outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine Geschwindigkeit für den Motor-Controller
+        analogWrite(posXpwmPin, 0); //Setzt die Geschwindigkeit des Motors nach rechts auf Null
+        analogWrite(negXpwmPin, outputValueX); //Übermittelt die Geschwindigkeit nach links an den Motor-Controller
     }
     else{ //Wenn der Joystick in der Ausgangsposition ist, dann:
         outputValueX = 0; //setzt Variable für die Motorgeschwindigkeit auf 0
 
-        //Übermittelt die geschwindigkeiten an den Motor-Controller
+        //Übermittelt die Geschwindigkeiten an den Motor-Controller
         analogWrite(posXpwmPin, outputValueX);
         analogWrite(negXpwmPin, outputValueX);
     }
@@ -80,19 +80,19 @@ void loop() {
     sensorValueY = analogRead(joystickYInputPin); //Liest den Ausgabewert des Joysticks für die Y-Achse aus und speichert diesen zwischen
 
     if (sensorValueY > (joystickYCenterValue + joystickYCenterTollerance) && buttonTopState == LOW) {  //Wenn der Joystick auf der Y-Achse oberhalb der Mitte ist und der Taster oben nicht betätigt ist, dann:
-        outputValueY = map(sensorValueY, joystickYCenterValue + joystickYCenterTollerance, joystickYMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
-        analogWrite(negYpwmPin, 0); //Setzt die geschwindigkeit des Motors nach unten auf Null
-        analogWrite(posYpwmPin, outputValueY); //Übermittelt die geschwindigkeit nach oben an den Motor-Controller
+        outputValueY = map(sensorValueY, joystickYCenterValue + joystickYCenterTollerance, joystickYMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine Geschwindigkeit für den Motor-Controller
+        analogWrite(negYpwmPin, 0); //Setzt die Geschwindigkeit des Motors nach unten auf Null
+        analogWrite(posYpwmPin, outputValueY); //Übermittelt die Geschwindigkeit nach oben an den Motor-Controller
     }
     else if (sensorValueY < (joystickYCenterValue - joystickYCenterTollerance) && buttonBottomState == LOW) {  //Wenn der Joystick auf der Y-Achse unterhalb der Mitte ist und der Taster unten nicht betätigt ist, dann:
-        outputValueY = map(sensorValueY, joystickYCenterValue - joystickYCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
-        analogWrite(posYpwmPin, 0); //Setzt die geschwindigkeit des Motors nach oben auf Null
-        analogWrite(negYpwmPin, outputValueY); //Übermittelt die geschwindigkeit nach unten an den Motor-Controller
+        outputValueY = map(sensorValueY, joystickYCenterValue - joystickYCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine Geschwindigkeit für den Motor-Controller
+        analogWrite(posYpwmPin, 0); //Setzt die Geschwindigkeit des Motors nach oben auf Null
+        analogWrite(negYpwmPin, outputValueY); //Übermittelt die Geschwindigkeit nach unten an den Motor-Controller
     }
     else{
         outputValueY = 0; //setzt Variable für die Motorgeschwindigkeit auf 0
 
-        //Übermittelt die geschwindigkeiten an den Motor-Controller
+        //Übermittelt die Geschwindigkeiten an den Motor-Controller
         analogWrite(posYpwmPin, outputValueY);
         analogWrite(negYpwmPin, outputValueY);
     }
