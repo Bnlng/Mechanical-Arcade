@@ -8,8 +8,8 @@
     <li><a href="#proj">2. Das Projekt</a></li>
     <li><a href="#hard">3. Hardware</a></li>
     <ul>
-        <li><a href="#teil">3.1 Verwendete Bauteile</a></li>
-        <li><a href="#aufb">3.2 Aufbau</a></li>
+        <li><a href="#aufb">3.1 Aufbau</a></li>
+        <li><a href="#teil">3.2 Verwendete Bauteile</a></li>
         <li><a href="#schalt">3.3 Schaltplan</a></li>
     </ul>
     <li><a href="#soft">2. Software</a></li>
@@ -22,25 +22,6 @@
 
 <h2 id="hard">Hardware</h2>
 
-<h3 id="teil">Verwendete Bauteile</h3>
-
-* 1 Arduino
-* 1 5V Netzteil
-* 1 Steckbrett
-*   Steckbrettkabel
-*   Holzplatten
-* 1 DC-Motor-Controller
-* 2 DC-Motoren
-* 2 Zahnräder
-* 2 Zahnstangen
-* 2 Schienen
-* 1 dünne Metallstange
-* 1 Modellflugzeug
-* 1 kleiner Laser
-* 1 Joystick
-* 4 Taster
-* 4 1kΩ Widerstände
-
 <h3 id="aufb">Aufbau</h3>
 
 Damit das Flugzeug alle Punkte erreichen kann haben wir ein mechanisches Bewegungssystem mit zwei Achsen gebaut. Wie genau dieses System aufgebaut ist zeigt folgende Grafik.
@@ -51,15 +32,42 @@ Ein genaueres 3D Modell kann unter <code>3D Modell.3mf</code> in den Dateien des
 
 Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vorführungsvideo aus der Ansicht von hinten, also vom späteren Inneren des Spielekastens. [Hier](https://www.youtube.com/watch?v=7guUQbI5MUM) findet sich ein Vorführungsvideo aus der Spieleransicht.
 
+<h3 id="teil">Verwendete Bauteile</h3>
+
+* Arduino
+* 5V Netzteil
+* Steckbrett
+* Steckbrettkabel
+* Holzplatten
+* DC-Motor-Treiber
+* DC-Motoren
+* Zahnräder
+* Zahnstangen
+* Schienen
+* dünne Metallstange
+* Modellflugzeug
+* kleiner Laser
+* Joystick
+* Taster
+* 1kΩ Widerstände
+
+<h4>5V Netzteil</h4>
+<h4>Arduino</h4>
+<h4>Joystick</h4>
+<h4>DC-Motor-Treiber</h4>
+<h4>DC-Motor</h4>
+<h4>Joystic</h4>
+<h4>Taster</h4>
+
+
+
 <h3 id="schalt">Schaltplan</h3>
 
-![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
+![Image](https://user-images.githubusercontent.com/88386307/146005848-2f45c6a0-38ad-49ec-bc33-91fe2b977dcd.png)
 
-Anmerkungen:
 
-Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist.
-
-Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
+**Anmerkungen:**
+Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist. Außerdem müssen die Pins des Motor-Treibers je nach Bauart anders belegt werden.
 
 <h2 id="soft">Software</h2>
 
@@ -181,7 +189,7 @@ void loop() {
 
 Als allererstes wird in Variablen gespeichert, welche Pins am Arduino für was zuständig sind. Die Pins A1 und A2 lesen die zwei verschiedenen Achsen des Joysticks aus, dabei wird pro Achse ein Wert von 0 bis 1023 ausgelesen. In der Ausgangsposition ist dieser Wert ca. 512 und wenn der Joystick beispielsweise nach oben gedrückt wird kann dieser Wert je nach Stelleung zwischen 513 und 1023 sein.
 
-Als nächstes werden den verschiedenen Bewegungsrichtungen des Flugzeugs Pins zugewiesen, wenn diese Pins aktiviert werden gibt der Arduino ein PWM Signal ([mehr Infos](https://www.arduino.cc/en/Tutorial/Foundations/PWM)) über diesen Pin aus, der Motor-Controller lässt daraufhin den Motor (X- oder Y-Achse) in eine bestimmte Richtung drehen. Soll sich die Drehrichtung ändern muss der Pin ausgeschaltet und ein anderer angeschaltet werden. `posXpwmPin` bewegt das flugzeug nach rechts, `negXpwmPin` nach links, `posYpwmPin` nach oben und `negYpwmPin` nach unten. Die bennenung ist analog zum Koordinatensystem aus der Mathematik.
+Als nächstes werden den verschiedenen Bewegungsrichtungen des Flugzeugs Pins zugewiesen, wenn diese Pins aktiviert werden gibt der Arduino ein PWM Signal ([mehr Infos](https://www.arduino.cc/en/Tutorial/Foundations/PWM)) über diesen Pin aus, der Motor-Treiber lässt daraufhin den Motor (X- oder Y-Achse) in eine bestimmte Richtung drehen. Soll sich die Drehrichtung ändern muss der Pin ausgeschaltet und ein anderer angeschaltet werden. `posXpwmPin` bewegt das flugzeug nach rechts, `negXpwmPin` nach links, `posYpwmPin` nach oben und `negYpwmPin` nach unten. Die bennenung ist analog zum Koordinatensystem aus der Mathematik.
 
 Danach werden die Pins für die Taster am Rand des Spiels definiert. Wird ein Taster gedrückt, so liest der dazugehörige Pin HIGH aus, wird er nicht gedrückt, dann LOW.
 
@@ -190,7 +198,7 @@ Danach werden die Pins für die Taster am Rand des Spiels definiert. Wird ein Ta
 const int joystickXInputPin = A1; //X-Achse des Joysticks
 const int joystickYInputPin = A0; //Y-Achse des Joysticks
 
-//PWM pins für den Motor-Controller
+//PWM pins für den Motor-Treiber
 const int posXpwmPin = 10; //rechts
 const int negXpwmPin = 6; //links
 const int posYpwmPin = 9; //oben
@@ -229,7 +237,7 @@ Dies sind die Variablen, in denen Werte im loop (der Teil des Sketches, der imme
 int sensorValueX = 0;
 int sensorValueY = 0;
 
-//Variablen um die für den Motor-Controller konvertierten Ausgabewerte (0-255) des Joysticks im loop zwischenzuspeichern
+//Variablen um die für den Motor-Treiber konvertierten Ausgabewerte (0-255) des Joysticks im loop zwischenzuspeichern
 int outputValueX = 0;
 int outputValueY = 0;
 
@@ -277,7 +285,7 @@ Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs a
     if (sensorValueX > (joystickXCenterValue + joystickXCenterTollerance) && buttonLeftState == LOW) {
         outputValueX = map(sensorValueX, joystickXCenterValue + joystickXCenterTollerance, joystickXMaxValue, 0, 255);
         analogWrite(negXpwmPin, 0); //Setzt die geschwindigkeit des Motors nach links auf Null
-        analogWrite(posXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach rechts an den Motor-Controller
+        analogWrite(posXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach rechts an den Motor-Treiber
     }
 ```
 
@@ -285,9 +293,9 @@ Der Code in den nächsten Drei Abschnitten ist für die Bewegung des Flugzeugs a
 
 ```c
     else if (sensorValueX < (joystickXCenterValue - joystickXCenterTollerance) && buttonRightState == LOW) { //Wenn der Joystick auf der X-Achse links von der Mitte ist und der Taster auf der linken Seite nicht betätigt ist, dann:
-        outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
+        outputValueX = map(sensorValueX, joystickXCenterValue - joystickXCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Treiber
         analogWrite(posXpwmPin, 0); //Setzt die geschwindigkeit des Motors nach rechts auf Null
-        analogWrite(negXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach links an den Motor-Controller
+        analogWrite(negXpwmPin, outputValueX); //Übermittelt die geschwindigkeit nach links an den Motor-Treiber
     }
 ```
 
@@ -297,7 +305,7 @@ Abschließend wird eine Else-Anweisung verwendet, diese führt den Code in den G
     else{ //Wenn der Joystick in der Ausgangsposition ist, dann:
         outputValueX = 0; //setzt Variable für die Motorgeschwindigkeit auf 0
 
-        //Übermittelt die geschwindigkeiten an den Motor-Controller
+        //Übermittelt die geschwindigkeiten an den Motor-Treiber
         analogWrite(posXpwmPin, outputValueX);
         analogWrite(negXpwmPin, outputValueX);
     }
@@ -311,19 +319,19 @@ Abschließend wird eine Else-Anweisung verwendet, diese führt den Code in den G
     sensorValueY = analogRead(joystickYInputPin); //Liest den Ausgabewert des Joysticks für die Y-Achse aus und speichert diesen zwischen
 
     if (sensorValueY > (joystickYCenterValue + joystickYCenterTollerance) && buttonTopState == LOW) {  //Wenn der Joystick auf der Y-Achse oberhalb der Mitte ist und der Taster oben nicht betätigt ist, dann:
-        outputValueY = map(sensorValueY, joystickYCenterValue + joystickYCenterTollerance, joystickYMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
+        outputValueY = map(sensorValueY, joystickYCenterValue + joystickYCenterTollerance, joystickYMaxValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Treiber
         analogWrite(negYpwmPin, 0); //Setzt die geschwindigkeit des Motors nach unten auf Null
-        analogWrite(posYpwmPin, outputValueY); //Übermittelt die geschwindigkeit nach oben an den Motor-Controller
+        analogWrite(posYpwmPin, outputValueY); //Übermittelt die geschwindigkeit nach oben an den Motor-Treiber
     }
     else if (sensorValueY < (joystickYCenterValue - joystickYCenterTollerance) && buttonBottomState == LOW) {  //Wenn der Joystick auf der Y-Achse unterhalb der Mitte ist und der Taster unten nicht betätigt ist, dann:
-        outputValueY = map(sensorValueY, joystickYCenterValue - joystickYCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Controller
+        outputValueY = map(sensorValueY, joystickYCenterValue - joystickYCenterTollerance, joystickYMinValue, 0, 255); //Konvertiert den Ausgabewert des Joysticks in eine geschwindigkeit für den Motor-Treiber
         analogWrite(posYpwmPin, 0); //Setzt die geschwindigkeit des Motors nach oben auf Null
-        analogWrite(negYpwmPin, outputValueY); //Übermittelt die geschwindigkeit nach unten an den Motor-Controller
+        analogWrite(negYpwmPin, outputValueY); //Übermittelt die geschwindigkeit nach unten an den Motor-Treiber
     }
     else{
         outputValueY = 0; //setzt Variable für die Motorgeschwindigkeit auf 0
 
-        //Übermittelt die geschwindigkeiten an den Motor-Controller
+        //Übermittelt die geschwindigkeiten an den Motor-Treiber
         analogWrite(posYpwmPin, outputValueY);
         analogWrite(negYpwmPin, outputValueY);
     }
