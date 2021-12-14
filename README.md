@@ -17,7 +17,7 @@
 
 <h2 id="einl">Einleitung</h2>
 
-Dies ist die Projektseite für unser Informatikprojekt des ersten Halbjahres. 
+Dies ist die Projektseite für unser Informatikprojekt des ersten Halbjahres. Uns war von Anfang an klar, dass wir etwas im Bereich des Physical Computing machen wollen. Als wir einen alten Joystick gefunden hatten sind wir dann auf die Idee für dieses Projekt gekommen und waren sofort begeistert. Wir haben uns dazu entschieden, das Projekt auf der Arduino Plattform umzusetzen, da diese recht einsteigerfreundlich und Perfekt für Projekte wie dieses geeignet ist.
     
 <h2 id="proj">Das Projekt</h2>
 
