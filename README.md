@@ -53,13 +53,9 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 
 <h3 id="schalt">Schaltplan</h3>
 
-![image](https://user-images.githubusercontent.com/88386307/144762397-f52d4438-60af-4e12-a86d-8b91ff4a76ab.png)
+![image](https://user-images.githubusercontent.com/88386307/146005848-2f45c6a0-38ad-49ec-bc33-91fe2b977dcd.png)
 
-Anmerkungen:
-
-Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist.
-
-Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
+**Anmerkungen:** Da es in der verwendeten Software (TinkerCAD) keinen Joystick gab wird dieser durch zwei Potentiometer dargestellt was technich gesehen genau das gleiche ist. Die Pins des Motor-Controllers müssen je nach Controller anders belegt werden.
 
 <h2 id="soft">Software</h2>
 
