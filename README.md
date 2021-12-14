@@ -61,7 +61,6 @@ Dieses versorgt den Arduino und die Motoren mit Strom. Der Arduino Nano benötig
 <h4>Arduino</h4>
 
 Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um einen Microcontroller mit mehreren analogen und digitalen Ein und Ausgängen. Dieser ist das Herzstück unseres Projektes und für die verarbeitung der Steuersignale und später für das Steuern des Gegnerflugzeuges und das Punktezählen zuständig.
-<h4>Joystick</h4>
 
 <h4>DC-Motor-Treiber</h4>
  Hierbei handelt es sich um den L298N dual H-Bridge Driver. Dieser ermöglicht die Steuerung von zwei Gleichstrommotoren. Also die Änderung von Drehrichtung und Geschwindigkeit.
@@ -70,7 +69,7 @@ Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um ei
 
 Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind sie in der Lage deutlich mehr Drehmoment zu leisten. Dies ist für das Projekt notwendig, da die Motoren sonst nicht in der Lage wären auch nur eine Umdrehung zu machen.  
 
-<h4>Joystic</h4>
+<h4>Joystick</h4>
 
 Bei dem Joystick handelt es sich um einen Logitch Wingman Extreme aus dem Jahre 1994. Die Ermittlung der Stellung erfolg mittels zwei Drehpotentimetern, eines für die X-Achse und eines für die Y-Achse. Potentiometer sind Spannugsteiler. An zwei der drei Anschlüsse wird eine Spannung angelegt, an dem dritten Anschluss ist nun abhängig vom Winkel der Drehachse eine Spannung messbar. Diese Spannung dient dem Arduino als Inputwert für die Bewegung des Flugzeuges.
 
