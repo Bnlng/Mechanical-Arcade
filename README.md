@@ -29,7 +29,7 @@ Dies ist die Projektseite für unser Informatikprojekt des ersten Halbjahres.
 
 <h3 id="aufb">Aufbau</h3>
 
-Damit das Flugzeug alle Punkte erreichen kann haben wir zwei achsiges mechanisches Bewegungssystem gebaut. Es basiert auf zwei Schlitten, welche sich jeweils wagrecht und senkrecht ind Schienen bewegen. Die Bewegung wird durch zwei Getriebemotoren ermöglicht, welche die Rotation mittels Zahnräder und Zahnstangen in lineare bewegung auf die Schlitten übertragen. Der komplette Aufbau für die senkrechte Bewegung ist auf dem Schlitten für die Wagerechte Bewegung montiert. Der 
+Damit das Flugzeug alle Punkte erreichen kann haben wir zwei achsiges mechanisches Bewegungssystem gebaut. Es basiert auf zwei Schlitten, welche sich jeweils wagrecht und senkrecht ind Schienen bewegen. Die Bewegung wird durch zwei Getriebemotoren ermöglicht, welche die Rotation mittels Zahnräder und Zahnstangen in lineare bewegung auf die Schlitten übertragen. Der komplette Aufbau für die senkrechte Bewegung ist auf dem Schlitten für die Wagerechte Bewegung montiert. Der Aufbau und die Funktion wird verständlicher bei Betrachtung des folgenden Bildes und des 3D-Modelles (zu öffnen mit 3D-Viewer, bei Windows 10 vorinstalliert).
  
 ![image](https://user-images.githubusercontent.com/88386307/144764417-1840f16e-6fd4-458f-b5d3-6f260564718b.png)
 
