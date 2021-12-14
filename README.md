@@ -66,7 +66,7 @@ Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind 
 
 <h4>3D-Gedruckte Komponenten</h4>
 
-Alle in dem 
+Alle, im oben zu sehenden 3D-Modell schwarz gefärbten Komponenten sind mittels einem FDM Druckers aus PLA gefertigt worden.
 
 <h4>Schubladenschienen</h4>
 
