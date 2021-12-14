@@ -21,7 +21,7 @@ Dies ist die Projektseite für unser Informatikprojekt des ersten Halbjahres.
     
 <h2 id="proj">Das Projekt</h2>
 
-"Mechanical Dogfight" ist ein Singleplayer Computerspiel auf Arduino-Basis, dessen Inhalt ein Luftkampf (eng. Dogfight) zwischen zwei Flugzeugen ist. Der Spieler steuert das Verfolgerflugzeug, eine Englische Supermarine Spitfire, mit einem Joystick. Das Besondere an diesem Spiel ist, dass es sich nicht auf einem Bildschirm abspielt, sondern mit echten Modellen der Flugzeuge welche sich zwei dimensional im Spielekasten bewegen können. Das Gegnerflugzeug wird automatisch vom Arduino gesteuert und muss vom Spieler mittels des Bordgeschützes getroffen werden. Zurzeit ist nur das Flugzeug des Spielers fertiggestellt, daher handelt es sich bei diesem Projekt erst einmal nur um eine Art „Proof of Concept“. Alles funktioniert, wie gedacht, weshalb wir das Projekt als vollen Erfolg ansehen.
+"Mechanical Dogfight" ist ein Singleplayer Computerspiel auf Arduino-Basis, dessen Inhalt ein Luftkampf (eng. Dogfight) zwischen zwei Flugzeugen ist. Der Spieler steuert das Verfolgerflugzeug, eine Englische Supermarine Spitfire, mit einem Joystick. Das Besondere an diesem Spiel ist, dass es sich nicht auf einem Bildschirm abspielt, sondern mit echten Modellen der Flugzeuge welche sich zwei dimensional im Spielekasten bewegen können. Das Gegnerflugzeug wird automatisch vom Arduino gesteuert und muss vom Spieler mittels des Bordgeschützes getroffen werden. Zurzeit ist nur das Flugzeug des Spielers fertiggestellt, daher handelt es sich bei diesem Projekt erst einmal nur um eine Art „Proof of Concept“. Alles funktioniert wie gedacht, weshalb wir das Projekt als vollen Erfolg ansehen.
 
 <h2 id="hard">Hardware</h2>
 
