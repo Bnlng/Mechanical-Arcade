@@ -53,17 +53,23 @@ Außerdem findet sich [hier](https://www.youtube.com/watch?v=KiZhklhcncI) ein Vo
 
 <h4>5V Netzteil</h4>
 
-Da der Arduino nicht genug
+Dieses versorgt den Arduino und die Motoren mit Strom. Der Arduino Nano benötigt eine Spannungsversorgung von 7 bis 12V um arbeiten zu können. Eine besonders hohe Leistung muss das Netzteil nicht aufweisen, da das gesamte Projekt noch keine Ströme über 1A gezogen hat.
 
 <h4>Arduino</h4>
 
+Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um einen Microcontroller mit mehreren analogen und digitalen Ein und Ausgängen. Dieser ist das Herzstück unseres Projektes und für die verarbeitung der Steuersignale und später für das Steuern des Gegnerflugzeuges und das Punktezählen zuständig.
 <h4>Joystick</h4>
 
 <h4>DC-Motor-Treiber</h4>
+ Hierbei handelt es sich um den L298N dual H-Bridge Driver. Dieser ermöglicht die Steuerung von zwei Gleichstrommotoren. Also die Änderung von Drehrichtung und Geschwindigkeit.
 
-<h4>DC-Motor</h4>
+<h4>DC-Getriebemotoren</h4>
+
+Diese sind für die Bewegung des Flugzeuges zuständig. Durch das Getriebe sind sie in der Lage deutlich mehr Drehmoment zu leisten. Dies ist für das Projekt notwendig, da die Motoren sonst nicht in der Lage wären auch nur eine Umdrehung zu machen.  
 
 <h4>Joystic</h4>
+
+Bei dem Joystick handelt es sich um einen Logitch-Wingman 
 
 <h4>Taster</h4>
 
