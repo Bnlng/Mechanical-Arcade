@@ -49,7 +49,7 @@ Dieses versorgt den Arduino und die Motoren mit Strom. Der Arduino Nano benötig
 Arduino ist eine Open Source Physical-Computing-Plattform. Es handelt sich um einen Microcontroller mit mehreren analogen und digitalen Ein und Ausgängen. Dieser ist das Herzstück unseres Projektes und für die Verarbeitung der Steuersignale und später für das Steuern des Gegnerflugzeuges und das Punktezählen zuständig.
 
 <h4>DC-Motor-Treiber</h4>
- Hierbei handelt es sich um den L298N dual H-Bridge Driver. Dieser ermöglicht die Steuerung von zwei Gleichstrommotoren. Also die Änderung von Drehrichtung und Geschwindigkeit.
+Hierbei handelt es sich um den L298N dual H-Bridge Driver. Dieser ermöglicht die Steuerung von zwei Gleichstrommotoren. Also die Änderung von Drehrichtung und Geschwindigkeit.
 
 <h4>DC-Getriebemotoren</h4>
 
